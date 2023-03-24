@@ -22,13 +22,13 @@
 body {
   font-family: var(--ff-body);
   font-size: 16px;
+  background-color: #4d57bf;
 }
 .container {
   width: 100%;
   height: 100vh;
 }
 .swiper {
-  background-color: #4d57bf;
   width: 100%;
   height: 100%;
 }
@@ -156,6 +156,7 @@ button:hover {
 }
 .swiper-slide img {
   width: 300px;
+  height: 35%;
 }
 .swiper .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -202,17 +203,22 @@ button:hover {
     height: 35%;
   }
   .swiper-slide > .slider {
-    margin-top: 120px;
+    margin-top: 90px;
     padding: 4rem 3rem;
     font-size: 1.5rem;
   }
   .sign_in--link {
-      padding: 15px 40px;
+    padding: 15px 40px;
+  }
+  .swiper-slide > .slider {
+    margin-top: 10px;
+  }
 }
 @media screen and (min-width: 49rem) {
   .container {
     display: flex;
   }
+
   button {
     width: 100%;
   }
@@ -228,10 +234,11 @@ button:hover {
     margin: 10px 0px 20px 0px;
   }
   .login {
-    padding: 2rem 5rem;
+    padding: 1.5rem 5rem;
   }
   .d-flex {
     justify-content: left;
+    margin-top: 5px;
   }
   .d-flex .fp {
     margin-left: auto;
@@ -240,7 +247,7 @@ button:hover {
     width: 50%;
   }
   #instruction {
-    margin-top: 15px;
+    margin-top: 10px;
   }
   .sign-up {
     width: 50%;
@@ -256,7 +263,7 @@ button:hover {
     width: 380px;
   }
   .swiper-slide > .slider {
-    padding: 5rem;
+    padding: 2.5rem;
   }
   .sign_in--link {
     padding: 10px 30px;
@@ -283,9 +290,9 @@ button:hover {
 }
 @media screen and (min-width: 62rem) {
   .login {
-    padding: 1.5rem 6rem;
+    padding: 1rem 6rem;
   }
   .swiper-slide > .slider {
-    padding: 5rem 9rem;
+    padding: 5rem 8rem;
   }
 }
