@@ -132,14 +132,14 @@ button:hover {
 /* swiper */
 
 .swiper-slide > .slider {
-  padding: 50px;
+  padding: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #eeebff;
-   font-size: 18px;
+  font-size: 18px;
 }
 .swiper .slider3 {
   padding-top: 10px;
@@ -171,7 +171,7 @@ button:hover {
   left: 5%;
 }
 .sign_in--link {
-  padding: 10px 20px;
+  padding: 10px 30px;
   background-color: #fb640d;
   color: #fff;
   border-radius: 10px;
@@ -193,15 +193,17 @@ button:hover {
 .swiper-button--btn {
   color: #fff;
 }
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 25rem) {
   .login {
     padding: 5rem;
   }
   .swiper-slide img {
-    width: 350px;
+    width: 400px;
   }
   .swiper-slide > .slider {
-    padding: 50px 7rem;
+    margin-top: 50px;
+    padding: 4rem 3rem;
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 49rem) {
