@@ -206,6 +206,8 @@ button:hover {
     padding: 4rem 3rem;
     font-size: 1.5rem;
   }
+  .sign_in--link {
+      padding: 15px 40px;
 }
 @media screen and (min-width: 49rem) {
   .container {
