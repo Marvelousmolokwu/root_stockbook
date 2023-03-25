@@ -40,18 +40,14 @@ a {
 }
 /************************ sign up ************************************/
 
-
-
-
-
 .login {
   overflow-x: hidden;
-  padding: 10px 30px;
+  padding: 1.5rem 30px;
   color: #2007b4;
   font-size: 15px;
 }
 .login-header {
-  margin: 30px 0px;
+  margin: 20px 0px;
 }
 .login .login--form,
 .options {
@@ -133,10 +129,6 @@ button:hover {
   background-color: var(--hover-color-cta);
 }
 
-
-
-
-
 /****************************** swiper *****************************/
 
 .swiper-slide > .slider {
@@ -208,7 +200,7 @@ button:hover {
 }
 @media screen and (min-width: 25rem) {
   .login {
-    padding: 5rem;
+    padding: 1.5rem;
   }
   .swiper-slide img {
     width: 400px;

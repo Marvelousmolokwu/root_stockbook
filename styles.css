@@ -41,7 +41,7 @@ a {
 /************************** sign up ****************************/
 .login {
   overflow-x: hidden;
-  padding: 30px;
+  padding: 1.5rem;
   color: #2007b4;
   font-size: 15px;
 }
@@ -198,7 +198,7 @@ button:hover {
 }
 @media screen and (min-width: 25rem) {
   .login {
-    padding: 5rem;
+    padding: 1.5rem;
   }
   .swiper-slide img {
     width: 400px;
