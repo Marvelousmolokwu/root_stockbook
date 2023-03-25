@@ -22,7 +22,6 @@
 body {
   font-family: var(--ff-body);
   font-size: 16px;
-  background-color: #4d57bf;
 }
 .container {
   width: 100%;
@@ -31,16 +30,15 @@ body {
 .swiper {
   width: 100%;
   height: 100%;
+  background: radial-gradient(at top right, #0b1682, #4d57bf);
 }
 a {
   color: inherit;
 }
 .sign-up {
-  display: block;
-  font-size: 0.7rem;
   display: none;
 }
-/* sign up */
+/************************** sign up ****************************/
 .login {
   overflow-x: hidden;
   padding: 30px;
@@ -129,30 +127,31 @@ input[type="checkbox"] {
 button:hover {
   background-color: var(--hover-color-cta);
 }
-/* swiper */
+/******************************* swiper *************************/
 
 .swiper-slide > .slider {
-  padding: 70px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #eeebff;
+  color: #fff;
   font-size: 18px;
+  gap: 20px;
 }
 .swiper .slider3 {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .slider--text {
-  margin-top: 20px;
-
   text-align: center;
 }
 .slider--text p {
   color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  margin-top: 10px;
 }
 .swiper-slide img {
   width: 300px;
@@ -172,11 +171,11 @@ button:hover {
   left: 5%;
 }
 .sign_in--link {
-  padding: 10px 30px;
+  padding: 12px 30px;
   background-color: #fb640d;
   color: #fff;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   border: #222;
   line-height: 158%;
@@ -188,11 +187,14 @@ button:hover {
 .sign_in--link:hover:active {
   background-color: #cd5713;
 }
-.slider--sign_in > p {
-  margin-top: 10px;
+.slider--sign_in > h5 {
+  margin-top: 15px;
+  color: #fff;
 }
 .swiper-button--btn {
   color: #fff;
+  font-weight: 500;
+  font-size: 18px;
 }
 @media screen and (min-width: 25rem) {
   .login {
@@ -204,11 +206,11 @@ button:hover {
   }
   .swiper-slide > .slider {
     margin-top: 90px;
-    padding: 4rem 3rem;
+    padding: 4rem 4rem;
     font-size: 1.5rem;
   }
   .sign_in--link {
-    padding: 15px 40px;
+    padding: 20px 65px;
   }
   .swiper-slide > .slider {
     margin-top: 10px;
@@ -266,7 +268,7 @@ button:hover {
     padding: 2.5rem;
   }
   .sign_in--link {
-    padding: 10px 30px;
+    padding: 15px 65px;
   }
   .swiper-button--btn {
     display: none;
