@@ -206,11 +206,10 @@ button:hover {
 
 .logo--image {
   text-align: center;
-  padding: 80px 10px 30px 10px;
-  height: 40vh;
+  padding: 90px 10px 20px 10px;
 }
 .skip--page--button {
-  padding: 8rem 6rem;
+  padding: 4rem 6rem;
   background-color: #fff;
   z-index: 10px;
   margin-top: -10px;
@@ -221,7 +220,7 @@ button:hover {
 }
 
 .create--link {
-  padding: 20px 10px;
+  padding: 11px 10px;
   background-color: transparent;
   color: #fb640d;
   border-radius: 10px;
@@ -234,10 +233,10 @@ button:hover {
   flex-grow: 1;
   text-decoration: none;
   text-align: center;
-  max-height: 70px;
+  max-height: 50px;
 }
 .skip--page--sign--link {
-  padding: 20px 10px;
+  padding: 11px 10px;
   background-color: #fb640d;
   color: #fff;
   border-radius: 10px;
@@ -250,7 +249,7 @@ button:hover {
   flex-grow: 1;
   text-decoration: none;
   text-align: center;
-  max-height: 70px;
+  max-height: 50px;
 }
 @media screen and (min-width: 25rem) {
   .login {
@@ -350,7 +349,6 @@ button:hover {
     gap: 30px;
     align-items: center;
   }
- 
 }
 @media screen and (min-width: 62rem) {
   .login {
@@ -359,5 +357,4 @@ button:hover {
   .swiper-slide > .slider {
     padding: 5rem 8rem;
   }
- 
 }
