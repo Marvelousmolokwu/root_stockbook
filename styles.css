@@ -157,18 +157,19 @@ button:hover {
   width: 300px;
   height: 35%;
 }
-.swiper .swiper-button-next::after,
-.swiper-button-prev::after {
+.swiper .swiper-button-next::after {
   content: "" !important;
 }
 .swiper .swiper-button-next {
   position: absolute;
-  top: 87%;
+  top: 90%;
   right: 5%;
 }
-.swiper .swiper-button-prev {
+.swiper .skip-btn {
+  position: absolute;
   top: 87%;
   left: 5%;
+  text-decoration: none;
 }
 .sign_in--link {
   padding: 12px 30px;
@@ -191,7 +192,8 @@ button:hover {
   margin-top: 15px;
   color: #fff;
 }
-.swiper-button--btn {
+.swiper-button--btn,
+.skip-btn {
   color: #fff;
   font-weight: 500;
   font-size: 18px;
@@ -289,6 +291,9 @@ button:hover {
     gap: 30px;
     align-items: center;
   }
+  .skip-btn {
+    display: none;
+  }
 }
 @media screen and (min-width: 62rem) {
   .login {
@@ -296,5 +301,8 @@ button:hover {
   }
   .swiper-slide > .slider {
     padding: 5rem 8rem;
+  }
+  .skip-btn {
+    display: none;
   }
 }
