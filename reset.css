@@ -1,0 +1,72 @@
+:root{
+    --bg-gradient: 72.13deg, #4D57BF -17.21%, #0B1682 92.62%;
+    --color-cta: hsla(22, 97%, 52%, 1);
+    --hover-color-cta: rgb(198, 92, 31);
+    --input-color: hsl(232, 100%, 69%);
+    --checkbox-color: #eeebff;
+    --text-color: hsla(248, 92%, 37%, 1);
+    --ff-body: 'Roboto', sans-serif;
+}
+
+/* #email, #password, #name, #confirm, button{
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    } */
+
+     #email, #password, #name, #confirm, .button, button{
+    width: 100%;
+}  
+    .container{
+    width: 100%;
+}  
+
+    .sign-up{
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+
+    .button{
+        margin-top: 10rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper, .swiper-slider, .swiper-wrapper, .slider{
+    display: none;
+    width: 0;
+}
+
+
+/* Responsiveness */
+@media screen and (min-width: 49rem){
+
+    .sign-up{
+        width: 50vw;
+    }
+
+    .swiper, .swiper-slider, .swiper-wrapper, .slider{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        height: 100vh;
+        background: linear-gradient(72.13deg, #4D57BF -17.21%, #0B1682 92.62%);
+    }
+
+    .swiper-slider img{
+        width: 25rem;
+    }
+
+    #email, #password, #name, #confirm, .button, button{
+    width: 100%;
+}
+
+    
+} 

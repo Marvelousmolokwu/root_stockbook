@@ -1,5 +1,5 @@
 :root {
-  --bg-gradient: 72.13deg, #4d57bf -17.21%, #0b1682 92.62%;
+  --bg-gradient: radial-gradient(at top right, #0b1682, #4d57bf);
   --color-cta: hsla(22, 97%, 52%, 1);
   --hover-color-cta: rgb(198, 92, 31);
   --input-color: hsl(232, 100%, 69%);
@@ -28,7 +28,7 @@ body {
   height: 100vh;
 }
 .swiper {
-  background: radial-gradient(at top right, #0b1682, #4d57bf);
+  background: var(--bg-gradient);
   display: none;
   width: 0%;
 }
@@ -42,12 +42,12 @@ a {
 
 .login {
   overflow-x: hidden;
-  padding: 1.5rem 30px;
-  color: #2007b4;
-  font-size: 15px;
+  padding: 1.5rem 1.87rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
 }
 .login-header {
-  margin: 20px 0px;
+  margin: 1.25rem 0rem;
 }
 .login .login--form,
 .options {
@@ -60,9 +60,9 @@ a {
   display: block;
 }
 .d-flex {
-  margin-top: 10px;
+  margin-top: 0.625rem;
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   justify-content: center;
 }
 #email,
@@ -89,7 +89,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 .jc-between a {
   text-decoration: none;
@@ -106,7 +106,7 @@ button {
 .divider {
   display: none;
 }
-button {
+button{
   border-radius: 0.625rem;
   background-color: var(--color-cta);
   color: white;
@@ -132,18 +132,18 @@ button:hover {
 /****************************** swiper *****************************/
 
 .swiper-slide > .slider {
-  padding: 60px;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #fff;
-  font-size: 18px;
-  gap: 20px;
+  font-size: 1.125rem;
+  gap: 1.25rem;
 }
 .swiper .slider3 {
-  padding-top: 20px;
+  padding-top: 1.25rem;
 }
 
 .slider--text {
@@ -151,12 +151,12 @@ button:hover {
 }
 .slider--text p {
   color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 30px;
-  font-size: 15px;
-  margin-top: 10px;
+  margin-bottom: 1.875rem;
+  font-size: 0.9rem;
+  margin-top: 0.625rem;
 }
 .swiper-slide img {
-  width: 300px;
+  width: 18.75rem;
   height: 35%;
 }
 .swiper .swiper-button-next::after,
@@ -173,11 +173,11 @@ button:hover {
   left: 5%;
 }
 .sign_in--link {
-  padding: 12px 30px;
-  background-color: #fb640d;
+  padding: 0.75rem 1.875rem;
+  background-color: var(--color-cta);
   color: #fff;
-  border-radius: 10px;
-  font-size: 18px;
+  border-radius: 0.625rem;
+  font-size: 1.125rem;
   font-weight: bold;
   border: #222;
   line-height: 158%;
@@ -188,20 +188,20 @@ button:hover {
   text-align: center;
 }
 .sign_in--link:hover:active {
-  background-color: #cd5713;
+  background-color: var(--hover-color-cta);
 }
 .slider--sign_in > h5 {
-  margin-top: 15px;
+  margin-top: 0.9rem;
   color: #fff;
 }
 .swiper-button--btn {
   color: #fff;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 /************ skip-page ***********/
 .skip--page {
-  background: radial-gradient(at top right, #0b1682, #4d57bf);
+  background: var(--bg-gradient);
 }
 
 .logo--image {
@@ -212,35 +212,35 @@ button:hover {
   padding: 4rem 6rem;
   background-color: #fff;
   z-index: 10px;
-  margin-top: -10px;
+  margin-top: -0.625rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
   height: 60vh;
 }
 
 .create--link {
-  padding: 11px 10px;
+  padding: 0.68rem 0.625rem;
   background-color: transparent;
-  color: #fb640d;
-  border-radius: 10px;
-  font-size: 20px;
+  color: var(--color-cta);
+  border-radius: 0.625rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  border: 1px solid #fb640d;
+  border: 1px solid var(--color-cta);
   line-height: 158%;
   letter-spacing: 1%;
   font-family: "Roboto", sans-serif;
   flex-grow: 1;
   text-decoration: none;
   text-align: center;
-  max-height: 50px;
+  max-height: 3.125rem;
 }
 .skip--page--sign--link {
-  padding: 11px 10px;
-  background-color: #fb640d;
+  padding: 0.68rem 0.625rem;
+  background-color: var(--color-cta);
   color: #fff;
-  border-radius: 10px;
-  font-size: 20px;
+  border-radius: 0.625rem;
+  font-size: 1.25rem;
   font-weight: bold;
 
   line-height: 158%;
@@ -249,26 +249,39 @@ button:hover {
   flex-grow: 1;
   text-decoration: none;
   text-align: center;
-  max-height: 50px;
+  max-height: 3.125rem;
 }
+/* continue */
+.continue{
+  width: 100%;
+  background-color: var(--color-cta);
+ padding: 0.68rem 0.625rem;
+ font-size: 1.25rem;
+   font-weight: bold;
+     color: #fff;
+      border-radius: 0.625rem;
+      text-align: center;
+      text-decoration: none;
+}
+
 @media screen and (min-width: 25rem) {
   .login {
     padding: 1.5rem;
   }
   .swiper-slide img {
-    width: 400px;
+    width: 25rem;
     height: 35%;
   }
   .swiper-slide > .slider {
-    margin-top: 90px;
+    margin-top: 5.625rem;
     padding: 4rem 4rem;
     font-size: 1.5rem;
   }
   .sign_in--link {
-    padding: 20px 65px;
+    padding: 1.25rem 4.0625rem;
   }
   .swiper-slide > .slider {
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
 @media screen and (min-width: 49rem) {
@@ -276,7 +289,7 @@ button:hover {
     display: flex;
   }
   .swiper {
-    background: radial-gradient(at top right, #0b1682, #4d57bf);
+    background: var(--bg-gradient);
 
     width: 50%;
   }
@@ -300,7 +313,7 @@ button:hover {
   }
   .d-flex {
     justify-content: left;
-    margin-top: 5px;
+    margin-top: 0.3125rem;
   }
   .d-flex .fp {
     margin-left: auto;
@@ -309,7 +322,7 @@ button:hover {
     width: 50%;
   }
   #instruction {
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
   .sign-up {
     width: 50%;
@@ -322,13 +335,13 @@ button:hover {
     justify-content: space-around;
   }
   .swiper-slide img {
-    width: 380px;
+    width: 23.75rem;
   }
   .swiper-slide > .slider {
     padding: 2.5rem;
   }
   .sign_in--link {
-    padding: 15px 65px;
+    padding: 0.875rem 4.06rem;
   }
   .swiper-button--btn {
     display: none;
@@ -338,7 +351,7 @@ button:hover {
   }
   .divider {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     justify-content: center;
   }
   .divider > img {
@@ -346,7 +359,7 @@ button:hover {
   }
   .icon-container {
     display: flex;
-    gap: 30px;
+    gap: 1.87rem;
     align-items: center;
   }
 }

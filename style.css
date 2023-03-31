@@ -35,6 +35,7 @@ body {
 .dashboard--logo > img {
   width: 6.25rem;
   margin-left: 1.25rem;
+  margin-bottom: 30px;
 }
 
 .d-flex img {
@@ -45,11 +46,12 @@ body {
   justify-content: left;
   align-items: center;
   color: #fff;
-
-  margin-top: 1.25rem;
-  margin-left: 2rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-left: 1.8rem;
+  margin-right: 0.5rem;
 }
-.d-flex > p {
+.d-flex > a {
   font-size: 0.75rem;
   margin-left: 0.625rem;
   text-align: left;
@@ -83,6 +85,34 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+.active,
+.dashBoard-items ul li:hover {
+  background: #4d57bf;
+  border-radius: 3px;
+}
+.sub-menu {
+  font-size: 0.75rem;
+  display: none;
+  color: #0b1682;
+  border-radius: 3px;
+  width: 5rem;
+  padding: 0.5rem 1rem 1rem 1rem;
+  box-shadow: 0px 1px 10px 0px #0000001a;
+}
+.sub-menu ul li {
+  padding: 0.5rem 1rem;
+
+  border-bottom: 1px solid #0b1682;
+  text-align: center;
+  margin-top: 10px;
+}
+.dashBoard-items ul li:hover .sub-menu {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  margin-left: 3.5rem;
+  margin-top: 6rem;
+}
 /* media query */
 @media screen and (min-width: 25rem) {
   .dashBoard {
@@ -99,6 +129,12 @@ body {
   }
   .close-btn {
     display: none;
+  }
+  .sub-menu {
+    width: 7rem;
+  }
+  .dashBoard-items ul li:hover .sub-menu {
+    margin-left: 5.5rem;
   }
 }
 @media screen and (min-width: 62rem) {
