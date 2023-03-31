@@ -39,6 +39,19 @@ a {
   display: none;
 }
 /************************** sign up ****************************/
+.dashBoard{
+
+ width: 100%;
+  background-color: var(--color-cta);
+ padding: 0.68rem 0.625rem;
+ font-size: 1.25rem;
+   font-weight: bold;
+     color: #fff;
+      border-radius: 0.625rem;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+}
 .login {
   overflow-x: hidden;
   padding: 1.5rem;
