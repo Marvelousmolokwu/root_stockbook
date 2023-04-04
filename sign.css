@@ -68,7 +68,8 @@ a {
 #email,
 #password,
 #name,
-button {
+button,
+input {
   border-radius: 0.5rem;
   height: 3.5rem;
   margin-bottom: 1.5rem;
@@ -77,7 +78,8 @@ button {
 
 #email,
 #name,
-#password {
+#password,
+input {
   width: 100%;
   border: 1px solid var(--input-color);
   text-indent: 1rem;
@@ -110,6 +112,7 @@ button{
   border-radius: 0.625rem;
   background-color: var(--color-cta);
   color: white;
+  cursor: pointer;
   font-weight: 700;
   font-size: 1.25rem;
   border: none;
@@ -125,7 +128,20 @@ input[type="checkbox"] {
   color: var(--color-cta);
 }
 
-button:hover {
+.otp{
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--input-color);
+  /* margin-inline:1rem */
+}
+
+.otp-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+button:hover, .continue:hover {
   background-color: var(--hover-color-cta);
 }
 
@@ -264,7 +280,6 @@ button:hover {
       text-decoration: none;
 }
 .dashBoard{
-
  width: 100%;
   background-color: var(--color-cta);
  padding: 0.68rem 0.625rem;
@@ -375,11 +390,28 @@ button:hover {
     gap: 1.87rem;
     align-items: center;
   }
+
+  .otp{
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.3rem;
+}
+
 }
 @media screen and (min-width: 62rem) {
   .login {
     padding: 1rem 6rem;
   }
+
+  .otp{
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--input-color);
+  /* margin-inline:1rem */
+}
+
+
   .swiper-slide > .slider {
     padding: 5rem 8rem;
   }
