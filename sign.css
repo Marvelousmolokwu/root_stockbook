@@ -108,7 +108,7 @@ input {
 .divider {
   display: none;
 }
-button{
+button {
   border-radius: 0.625rem;
   background-color: var(--color-cta);
   color: white;
@@ -128,7 +128,7 @@ input[type="checkbox"] {
   color: var(--color-cta);
 }
 
-.otp{
+.otp {
   height: 1.8rem;
   width: 1.8rem;
   border-radius: 0.3rem;
@@ -136,12 +136,13 @@ input[type="checkbox"] {
   /* margin-inline:1rem */
 }
 
-.otp-container{
+.otp-container {
   display: flex;
   justify-content: space-between;
 }
 
-button:hover, .continue:hover {
+button:hover,
+.continue:hover {
   background-color: var(--hover-color-cta);
 }
 
@@ -268,28 +269,63 @@ button:hover, .continue:hover {
   max-height: 3.125rem;
 }
 /* continue */
-.continue{
+.continue {
   width: 100%;
   background-color: var(--color-cta);
- padding: 0.68rem 0.625rem;
- font-size: 1.25rem;
-   font-weight: bold;
-     color: #fff;
-      border-radius: 0.625rem;
-      text-align: center;
-      text-decoration: none;
+  padding: 0.68rem 0.625rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 0.625rem;
+  text-align: center;
+  text-decoration: none;
 }
-.dashBoard{
- width: 100%;
+.dashBoard {
+  width: 100%;
   background-color: var(--color-cta);
- padding: 0.68rem 0.625rem;
- font-size: 1.25rem;
-   font-weight: bold;
-     color: #fff;
-      border-radius: 0.625rem;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 20px;
+  padding: 0.68rem 0.625rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 0.625rem;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+}
+/* popup successful */
+.successful {
+  padding: 20px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  z-index: 12;
+  background-color: #fff;
+  border-radius: 5px;
+  display: none;
+}
+.successful--close {
+  display: flex;
+  margin-left: auto;
+  cursor: pointer;
+}
+.successful h2,
+p {
+  color: var(--color-cta);
+  font-size: 20px;
+}
+.successful a {
+  color: var(--text-color);
+  font-size: 12px;
+}
+.successful p {
+  font-size: 12px;
+}
+.show-continue {
+  display: block;
 }
 
 @media screen and (min-width: 25rem) {
@@ -310,6 +346,9 @@ button:hover, .continue:hover {
   }
   .swiper-slide > .slider {
     margin-top: 0.625rem;
+  }
+  .successful {
+    right: 15%;
   }
 }
 @media screen and (min-width: 49rem) {
@@ -391,26 +430,27 @@ button:hover, .continue:hover {
     align-items: center;
   }
 
-  .otp{
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 0.3rem;
-}
-
+  .otp {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 0.3rem;
+  }
+  .successful {
+    right: 40%;
+  }
 }
 @media screen and (min-width: 62rem) {
   .login {
     padding: 1rem 6rem;
   }
 
-  .otp{
-  height: 3.5rem;
-  width: 3.5rem;
-  border-radius: 0.3rem;
-  border: 1px solid var(--input-color);
-  /* margin-inline:1rem */
-}
-
+  .otp {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--input-color);
+    /* margin-inline:1rem */
+  }
 
   .swiper-slide > .slider {
     padding: 5rem 8rem;
