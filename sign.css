@@ -93,6 +93,7 @@ input {
   align-items: center;
   gap: 0.625rem;
 }
+
 .jc-between a {
   text-decoration: none;
 }
@@ -100,11 +101,25 @@ input {
   display: flex;
   justify-content: space-between;
 }
+
+.jc-start{
+  justify-content: flex-start;
+}
+
+.ai-center{
+  align-items: center;
+}
+
 .icon-container {
   display: flex;
   justify-content: space-around;
-  display: none;
+  /* display: none; */
 }
+
+.icon-container a img{
+  margin-inline: 0.5rem;
+}
+
 .divider {
   display: none;
 }
@@ -120,12 +135,16 @@ button {
 }
 input[type="checkbox"] {
   background-color: var(--checkbox-color);
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
 }
 .cta {
   color: var(--color-cta);
+}
+
+.options p{
+  color: black;
 }
 
 .otp {
@@ -397,10 +416,7 @@ p {
     display: block;
     height: 100%;
   }
-  .icon-container {
-    display: flex;
-    justify-content: space-around;
-  }
+
   .swiper-slide img {
     width: 23.75rem;
   }
