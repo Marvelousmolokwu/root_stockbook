@@ -16,6 +16,16 @@ profile.addEventListener("click", () => {
 profileClose.addEventListener("click", () => {
   mainProfile.classList.remove("show--profile");
 });
+// pop up
+const addItem = document.querySelector(".add");
+const popup = document.querySelector(".popup-container");
+const close = document.querySelector(".popup--close");
+addItem.addEventListener("click", () => {
+  popup.classList.add("show--popup");
+});
+close.addEventListener("click", () => {
+  popup.classList.remove("show--popup");
+});
 
 // charts
 // setup
