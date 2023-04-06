@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dashBoard</title>
-     <!-- font awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
     
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
+      
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="header--top">
         <div class="header--menu">
           <img
             src="/images/fluent_navigation-16-filled (1).png"
@@ -26,21 +27,28 @@
           />
 
           <div class="header--info">
-            <div class="header--image"></div>
-            <p>Hi! Deborah Allen</p>
+              <h3>Item</h3>
           </div>
-        </div>
+     
 
         <div class="header--notification">
           <img src="/images/Group 595.png" alt="" />
-          <div class="notification--img"></div>
-        </div>
-      </div>
-      <h2>DashBoard</h2>
-      <div class="header--sreach">
+          <div class="notification--img"></div></div>
+          </div>
+                </div>
+  <div class="header--sreach">
         <img src="/images/ic_round-search.png" alt="sreach" width="40px" />
         <input type="sreach" name="sreach" id="sreach" placeholder="sreach" />
+         <button class="Set-reminder">Set Reminder</button>
+        <div class="header--addstock">
+            <button class="add">Add Stock</button>
+            
+        </div>
       </div>
+  
+    
+    
+    
     </header>
     <aside>
       <div class="dashBoard">
@@ -90,46 +98,59 @@
       </div>
     </aside>
     <main>
-      <div class="cards">
-        <a href="" class="card">
-          <img src="/images/la_file-invoice (1).png" alt="" />
-          <p>Add Invoice</p>
-        </a>
-        <a href="" class="card">
-          <img src="/images/icon-park-outline_reduce-user.png" alt="" />
-          <p>Add Customer</p>
-        </a>
-        <a href="/main/item.html" class="card">
-          <img src="/images/add.png" alt="" />
-          <p>Add Item</p>
-        </a>
-        <a href="" class="card">
-          <img src="/images/icon-park-outline_expenses-one (1).png" alt="" />
-          <p>Add Expense</p>
-        </a>
-      </div>
-      <div class="cash-flow">
-         
-        <div class="chartCard">
-          <h3>Cash Flow</h3>
-      <div class="chartBox" >
-       <canvas id="myChart" ></canvas>
-      </div>
-    </div>
-      <div class="revenue">
-        <div><p class="ash">cash as at <span>1/3/2023</span> </p>
-        <h4 class="black">NGN12,000.00</h4>
-       <h5 class="green">Incoming</h5>
-       <h4 class="black">NGN25,000.00 +</h4></div>
-        
-       <div><h5 class="red">Outgoing</h5>
-       <h4 class="black">NGN7,500.00 -</h4>
-       <p class="blue">Cash as at 31/3/2023</p>
-       <h4 class="black">NGN32,359.00 </h4></div>
-       
+      <div class="main--heading">
+      <a href="/main/item.html">Availble Stock</a>
+      <a class="main-a">Out of stock</a></div>
+        <div class="table--body">
+<table class="list" id="item-list">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Quantity</th>
+    <th>price</th>
+    
+    <th></th>
+  </tr>
+</thead>
+<tbody></tbody>
+</table>
+</div> 
+        <!-- popup -->
+      <div class="popup-container">
+        <form  class="popup" onsubmit="onFormSubmit()">
+           <div class="popoup--head">
+               <img src="/images/Close_MD2.png" alt="" class="popup--close"></div>
+             <h2 id="popup-title">New Stock</h2>
+            <label for="stock-name">Add name*</label><label class="validation-error hide" id="fullNameValidationError"> this field is requried</label>
+                
+                <input type="text" id="stock-name" name="stock-name">
+            
+            
+            <label for="stock-type">
+                Add type
+                <input type="text" id="stock-type" name="stock-type">
+            </label>
+            
+           <label for="stock-amount">
+                Add Amount
+                <input type="text" id="stock-amount" name="stock-amount">
+            </label>
+            
+             <label for="stock-price">
+                Add Price
+                <input type="number" id="stock-price" name="stock-price">
+            </label>
+             <input id="popup-btn" type="submit" value="submit"
+        >
+        </form>
 
-      </div>
-      </div>
+       
+    </div>
+
+
+    <!-- table -->
+  
     </main>
     <aside>
       <div class="profile">
@@ -178,70 +199,6 @@
         </div>
       </div>
     </aside>
-    <!-- <button class="sidebar-toggle">menu</button>
-    <div class="dashBoard">
-      <div class="close"><button class="close-btn">close</button></div>
 
-      <div class="dashboard--logo">
-        <img src="/images/Group516.png" alt="logo" />
-      </div>
-      <div class="dashBoard-items">
-        <ul>
-          <li class="d-flex active">
-            <img src="/images/icon-park-outline_dashboard-one.png" alt="" />
-            <a>DashBoard</a>
-          </li>
-          <li class="d-flex">
-            <img src="/images/fluent_tray-item-remove-24-regular.png" alt="" />
-            <a>Item</a>
-            <img src="/images/arrow_drop_down_24px.png" alt="" />
-            <div class="sub-menu">
-              <ul>
-                <li>item 1</li>
-                <li>item 2</li>
-              </ul>
-            </div>
-          </li>
-          <li class="d-flex">
-            <img src="/images/Vector.png" alt="" />
-            <a>Sales</a>
-            <img src="/images/arrow_drop_down_24px.png" alt="" />
-            <div class="sub-menu">
-              <ul>
-                <li>item 1</li>
-                <li>item 2</li>
-              </ul>
-            </div>
-          </li>
-          <li class="d-flex">
-            <img src="/images/Vector2.png" alt="" />
-            <a>Invoice</a>
-          </li>
-          <li class="d-flex">
-            <img src="/images/icon-park-outline_expenses-one.png" alt="" />
-            <a>Expenses</a>
-          </li>
-          <li class="d-flex">
-            <img
-              src="/images/material-symbols_monitor-weight-loss-outline-sharp.png"
-              alt=""
-            />
-            <a>Profit and Loss</a>
-            <img src="/images/arrow_drop_down_24px.png" alt="" />
-            <div class="sub-menu">
-              <ul>
-                <li>item 1</li>
-                <li>item 2</li>
-              </ul>
-            </div>
-          </li>
-          <li class="d-flex">
-            <img src="/images/settings_24px.png" alt="" />
-            <a>setting</a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

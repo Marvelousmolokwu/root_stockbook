@@ -40,10 +40,12 @@ header {
   display: flex;
   justify-content: space-between;
 }
+.Set-reminder,
 .header--addstock {
   margin-left: auto;
 }
-.header--addstock > button {
+.header--addstock > button,
+.Set-reminder {
   border-radius: 5px;
   height: inherit;
   color: #fff;
@@ -52,6 +54,7 @@ header {
   font-size: 12px;
   font-style: "Roboto", sans-serif;
   border: none;
+  margin-right: 10px;
 }
 .header--menu > img {
   background-color: white;
@@ -132,6 +135,7 @@ header {
   font-size: 0.75rem;
   margin-left: 0.625rem;
   text-align: left;
+  color: #fff;
 }
 .sidebar-toggle {
   font-size: 1rem;
@@ -165,6 +169,24 @@ header {
 .dashBoard-items ul li:hover {
   background: #4d57bf;
   border-radius: 3px;
+}
+/* main */
+main {
+  padding: 10px 20px;
+  overflow: hidden;
+}
+.main--heading {
+  display: flex;
+  line-height: 28px;
+  gap: 50px;
+}
+.main--heading > a:hover,
+
+.main-a {
+  width: 120px;
+  color: hsla(22, 97%, 52%, 1);
+  border-bottom: 1px solid hsla(22, 97%, 52%, 1);
+  text-align: center;
 }
 /* popup */
 .popup-container {
@@ -272,6 +294,50 @@ header {
   display: block;
   position: fixed;
 }
+/* table */
+table,
+th,
+td {
+  padding: 0.5rem 1rem;
+}
+main.table {
+  max-height: 19rem;
+  background-color: #fff;
+  overflow: hidden;
+  width: 80vw;
+}
+.table--body {
+  max-height: 18rem;
+  background-color: #fff;
+  margin: 0.8rem auto;
+  border-radius: 0.6rem;
+  overflow: auto;
+  width: 80%;
+  margin: 0px;
+}
+.table--body::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.5rem;
+}
+.table--body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+.table--body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+.popup--close {
+  cursor: pointer;
+}
+label.validation-error {
+  color: red;
+  margin-left: 5px;
+}
+.hide {
+  display: none;
+}
+
 /* media query */
 @media screen and (min-width: 25rem) {
   /* .dashBoard {
@@ -312,8 +378,6 @@ header {
   main {
     grid-column: 2/3;
     grid-row: 2/3;
-    width: 100%;
-    margin: 20px 40px 0px 40px;
   }
   .sidebar-toggle {
     display: none;
@@ -328,45 +392,20 @@ header {
   .header--sreach input {
     width: 50%;
   }
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    place-items: center;
-    margin-top: 20px;
-  }
 
-  .card {
-    width: 200px;
-    height: 100px;
-  }
-  .cash-flow {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    margin: 0;
-  }
-  .chartBox {
-    min-width: 600px;
-  }
-  .revenue {
-    margin: 40px 0px 0px 10px;
-    max-height: 200px;
-    display: flex;
-    flex-direction: column;
-    padding-right: 130px;
-    gap: 1px;
-  }
-  .black {
-    line-height: 16px;
-  }
   .profile {
     width: 20%;
     height: 100%;
   }
-  .header--addstock > button {
+  .header--addstock > button,
+  .Set-reminder {
     padding: 13px 45px;
     border-radius: 5px;
+  }
+  table,
+  th,
+  td {
+    padding: 0.5rem 3rem;
   }
 }
 @media screen and (min-width: 62rem) {

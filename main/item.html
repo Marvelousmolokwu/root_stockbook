@@ -14,6 +14,7 @@
     />
       
     <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -58,14 +59,14 @@
           <ul>
             <li class="d-flex active">
               <img src="/images/icon-park-outline_dashboard-one.png" alt="" />
-              <a>DashBoard</a>
+              <a href="/main/dashBoard.html">DashBoard</a>
             </li>
             <li class="d-flex">
               <img
                 src="/images/fluent_tray-item-remove-24-regular.png"
                 alt=""
               />
-              <a>Item</a>
+              <a href="/main/item.html">Item</a>
             </li>
             <li class="d-flex">
               <img src="/images/Vector.png" alt="" />
@@ -95,32 +96,50 @@
       </div>
     </aside>
     <main>
+      <div class="main--heading">
+      <a class="main-a">Availble Stock</a>
+      <a href="/main/remaining.html">Out of stock</a></div>
+        <div class="table--body">
+<table class="list" id="item-list">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Quantity</th>
+    <th>price</th>
+    
+    <th></th>
+  </tr>
+</thead>
+<tbody></tbody>
+</table>
+</div> 
         <!-- popup -->
       <div class="popup-container">
-        <form action="" class="popup">
+        <form  class="popup" onsubmit="onFormSubmit()">
            <div class="popoup--head">
                <img src="/images/Close_MD2.png" alt="" class="popup--close"></div>
              <h2 id="popup-title">New Stock</h2>
-            <label for="stock-name">
-                Add name
+            <label for="stock-name">Add name*</label><label class="validation-error hide" id="fullNameValidationError"> this field is requried</label>
+                
                 <input type="text" id="stock-name" name="stock-name">
-            </label>
+            
             
             <label for="stock-type">
                 Add type
                 <input type="text" id="stock-type" name="stock-type">
             </label>
             
-            <label for="stock-amount">
-                Add amount
-                <input type="number" id="stock-amount" name="stock-amount">
+           <label for="stock-amount">
+                Add Amount
+                <input type="text" id="stock-amount" name="stock-amount">
             </label>
             
-            <label for="stock-price">
-                Add price
+             <label for="stock-price">
+                Add Price
                 <input type="number" id="stock-price" name="stock-price">
             </label>
-             <input id="popup-btn" type="submit"
+             <input id="popup-btn" type="submit" value="submit"
         >
         </form>
 
@@ -129,10 +148,7 @@
 
 
     <!-- table -->
-<table>
-
-</table>
-
+  
     </main>
     <aside>
       <div class="profile">
