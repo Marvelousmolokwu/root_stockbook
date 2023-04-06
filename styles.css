@@ -110,6 +110,15 @@ button {
   display: flex;
   justify-content: space-between;
 }
+
+.ai-center{
+  align-items: center;
+}
+
+.options p{
+  color: black;
+}
+
 .icon-container {
   display: flex;
   justify-content: space-around;
