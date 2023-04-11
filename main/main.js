@@ -4,7 +4,6 @@ const popup = document.querySelector(".popup-container");
 const close = document.querySelector(".popup--close");
 const form1 = document.querySelector(".popup");
 
-
 addItem.addEventListener("click", () => {
   popup.classList.add("show--popup");
 });

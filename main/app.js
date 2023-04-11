@@ -4,10 +4,10 @@ const dashboard = document.querySelector(".dashBoard");
 const profile = document.querySelector(".notification--img");
 const profileClose = document.querySelector(".profile--close");
 const mainProfile = document.querySelector(".profile");
-const setReminder = document.querySelector(".set-reminder");
-const setReminderPopup = document.querySelector(".set--reminder--popup");
-const setReminderClose = document.querySelector(".popup--close--setReminder");
-const SetreminderSave = document.querySelector(".set--reminder--save");
+
+// const setReminderPopup = document.querySelector(".set--reminder--popup");
+// const setReminderClose = document.querySelector(".popup--close--setReminder");
+// const SetreminderSave = document.querySelector(".set--reminder--save");
 toggleBtn.addEventListener("click", function () {
   dashboard.classList.toggle("show-sidebar");
 });
@@ -20,15 +20,15 @@ profile.addEventListener("click", () => {
 profileClose.addEventListener("click", () => {
   mainProfile.classList.remove("show--profile");
 });
-setReminder.addEventListener("click", () => {
-  setReminderPopup.classList.add("show--set--reminder--popup");
-});
-setReminderClose.addEventListener("click", () => {
-  setReminderPopup.classList.remove("show--set--reminder--popup");
-});
-SetreminderSave.addEventListener("click", () => {
-  setReminderPopup.classList.remove("show--set--reminder--popup");
-});
+// setReminder.addEventListener("click", () => {
+//   setReminderPopup.classList.add("show--set--reminder--popup");
+// });
+// setReminderClose.addEventListener("click", () => {
+//   setReminderPopup.classList.remove("show--set--reminder--popup");
+// });
+// SetreminderSave.addEventListener("click", () => {
+//   setReminderPopup.classList.remove("show--set--reminder--popup");
+// });
 
 // charts
 // setup
