@@ -55,6 +55,7 @@ header {
   font-style: "Roboto", sans-serif;
   border: none;
   margin-right: 10px;
+  cursor: pointer;
 }
 .header--menu > img {
   background-color: white;
@@ -181,7 +182,6 @@ main {
   gap: 50px;
 }
 .main--heading > a:hover,
-
 .main-a {
   width: 120px;
   color: hsla(22, 97%, 52%, 1);
