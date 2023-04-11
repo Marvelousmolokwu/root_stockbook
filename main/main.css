@@ -151,7 +151,8 @@ header {
   transform: translate(0);
   position: fixed;
 }
-.close-btn {
+.close-btn,
+.popup--close--setReminder {
   display: flex;
 
   font-size: 1rem;
@@ -189,7 +190,8 @@ main {
   text-align: center;
 }
 /* popup */
-.popup-container {
+.popup-container,
+.set--reminder--popup {
   padding: 15px 20px;
   display: flex;
   flex-direction: column;
@@ -237,6 +239,35 @@ main {
   justify-content: flex-end;
 }
 .show--popup {
+  display: block;
+}
+.set--reminder--popup {
+  height: 200px;
+}
+.set--reminder--popup > button {
+  padding: 10px;
+  background-color: #0b1682;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0.6090534925460815px 6.0905351638793945px 0px #0000001a;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.set--reminder--popup h3 {
+  color: black;
+  margin: 20px 0px;
+}
+.set--reminder--popup > input {
+  width: 40px;
+  text-indent: 5px;
+  padding: 5px 0px;
+  background-color: #f2f2f2;
+  border: none;
+}
+.show--set--reminder--popup {
   display: block;
 }
 
