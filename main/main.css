@@ -45,13 +45,15 @@ header {
   margin-left: auto;
 }
 .header--addstock > button,
-.Set-reminder {
+.Set-reminder,
+.invoice--generate,
+.invoice-button {
   border-radius: 5px;
   height: inherit;
   color: #fff;
   background-color: #2007b4;
   padding: 5px 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-style: "Roboto", sans-serif;
   border: none;
   margin-right: 10px;
@@ -152,7 +154,8 @@ header {
   position: fixed;
 }
 .close-btn,
-.popup--close--setReminder {
+.popup--close--setReminder,
+.invoice--popup--close {
   display: flex;
 
   font-size: 1rem;
@@ -191,8 +194,9 @@ main {
 }
 /* popup */
 .popup-container,
-.set--reminder--popup {
-  padding: 15px 20px;
+.set--reminder--popup,
+.invoice--popup {
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -209,11 +213,13 @@ main {
   background: #fff;
   display: none;
 }
-.popup-container h2 {
+.popup-container h2,
+.invoice--popup h2 {
   color: black;
   margin-bottom: 10px;
 }
-.popup-container * input {
+.popup-container * input,
+.invoice--popup * input {
   border-radius: 0.5rem;
   height: 2rem;
   margin-bottom: 1rem;
@@ -239,6 +245,9 @@ main {
   justify-content: flex-end;
 }
 .show--popup {
+  display: block;
+}
+.show--popup--invoice {
   display: block;
 }
 .set--reminder--popup {
@@ -326,24 +335,32 @@ main {
   position: fixed;
 }
 /* table */
-table,
-th,
-td {
-  padding: 0.5rem 1rem;
+#invoice-list,
+#invoice-list > th,
+#invoice-list > td {
+  padding: 1.5rem 0.8rem;
+  margin: 20px;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
 }
-main.table {
+#invoice-list > th {
+  font-size: 1rem;
+}
+#invoice-list {
   max-height: 19rem;
   background-color: #fff;
   overflow: hidden;
-  width: 80vw;
+  width: 90vw;
 }
+
 .table--body {
   max-height: 18rem;
   background-color: #fff;
   margin: 0.8rem auto;
   border-radius: 0.6rem;
   overflow: auto;
-  width: 80%;
+  width: 90%;
   margin: 0px;
 }
 .table--body::-webkit-scrollbar {
@@ -367,6 +384,97 @@ label.validation-error {
 }
 .hide {
   display: none;
+}
+.hide--invoice {
+  display: none;
+}
+/* invoice */
+.invoice-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  color: #555;
+  position: absolute;
+  z-index: 20;
+  top: 20px;
+  right: 20px;
+  background-color: #fffcfc;
+  display: none;
+}
+.invoice-box > img {
+  right: 12px;
+  position: absolute;
+  top: 8px;
+}
+
+.invoice-box table {
+  width: 100%;
+  line-height: inherit;
+  text-align: left;
+  background-color: #fff;
+  padding: 15px;
+}
+
+.invoice-box table td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+  text-align: right;
+}
+
+.invoice-box table tr.top table td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+  font-size: 25px;
+  line-height: 35px;
+  color: #333;
+}
+
+.invoice-box table tr.information table td {
+  padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+  border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+  border-top: 2px solid #eee;
+  font-weight: bold;
+}
+.invoice-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+.invoice-button {
+  padding: 5px 20px;
+}
+.show--invoice-receipt {
+  display: block;
 }
 
 /* media query */
@@ -433,12 +541,29 @@ label.validation-error {
     padding: 13px 45px;
     border-radius: 5px;
   }
-  table,
-  th,
-  td {
-    padding: 0.5rem 3rem;
+  #invoice-list,
+  #invoice-list > th,
+  #invoice-list > td {
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+  }
+  #invoice-list > th {
+    font-size: 1rem;
+  }
+
+  .invoice-box table tr.top table td {
+    width: 100%;
+    display: block;
+    text-align: right;
+  }
+
+  .invoice-box table tr.information table td {
+    width: 100%;
+    display: block;
+    text-align: right;
   }
 }
+
 @media screen and (min-width: 62rem) {
   .revenue {
     min-height: 200px;
