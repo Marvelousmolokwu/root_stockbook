@@ -477,6 +477,11 @@ label.validation-error {
   display: block;
 }
 
+/* invoice form */
+.stock__input {
+  min-width: 100%;
+}
+
 /* media query */
 @media screen and (min-width: 25rem) {
   /* .dashBoard {
