@@ -81,6 +81,7 @@ header {
   width: 33px;
   height: 33px;
   border-radius: 50px;
+  cursor: pointer;
 }
 .header--info,
 .header--notification {
@@ -95,7 +96,10 @@ header {
 }
 .header--sreach {
   display: flex;
-  gap: 5px;
+  gap: 0px;
+}
+.header--sreach > img {
+  min-width: 40px;
 }
 .header--sreach input {
   background-color: #f2f2f2;
@@ -169,6 +173,7 @@ header {
   display: flex;
   justify-content: flex-end;
   margin-right: 10px;
+  cursor: pointer;
 }
 .active,
 .dashBoard-items ul li:hover {
@@ -195,7 +200,8 @@ main {
 /* popup */
 .popup-container,
 .set--reminder--popup,
-.invoice--popup {
+.invoice--popup,
+.popup-customer--form {
   padding: 25px 20px;
   display: flex;
   flex-direction: column;
@@ -214,12 +220,14 @@ main {
   display: none;
 }
 .popup-container h2,
-.invoice--popup h2 {
+.invoice--popup h2,
+.popup-customer--form h2 {
   color: black;
   margin-bottom: 10px;
 }
 .popup-container * input,
-.invoice--popup * input {
+.invoice--popup * input,
+.popup-customer--form * input {
   border-radius: 0.5rem;
   height: 2rem;
   margin-bottom: 1rem;
@@ -252,6 +260,11 @@ main {
 }
 .set--reminder--popup {
   height: 200px;
+}
+.popup-customer--form {
+}
+.show--customer--form {
+  display: block;
 }
 .set--reminder--popup > button {
   padding: 10px;
@@ -329,23 +342,25 @@ main {
 }
 .profile--close {
   margin-left: 10px;
+  cursor: pointer;
 }
 .show--profile {
   display: block;
   position: fixed;
 }
 /* table */
-#invoice-list,
-#invoice-list > th,
-#invoice-list > td {
-  padding: 1.5rem 0.8rem;
-  margin: 20px;
+table,
+table * th,
+table * td {
+  padding: 0.5rem 1rem;
+
   line-height: 1rem;
   text-align: center;
   font-size: 0.8rem;
 }
-#invoice-list > th {
+table * th {
   font-size: 1rem;
+  padding: 1.5rem 2.8rem;
 }
 #invoice-list {
   max-height: 19rem;
@@ -410,6 +425,7 @@ label.validation-error {
   right: 12px;
   position: absolute;
   top: 8px;
+  cursor: pointer;
 }
 
 .invoice-box table {
@@ -477,8 +493,6 @@ label.validation-error {
   display: block;
 }
 
-/* invoice form */
-
 /* media query */
 @media screen and (min-width: 25rem) {
   /* .dashBoard {
@@ -543,13 +557,13 @@ label.validation-error {
     padding: 13px 45px;
     border-radius: 5px;
   }
-  #invoice-list,
-  #invoice-list > th,
-  #invoice-list > td {
+  table,
+  table > th,
+  table > td {
     padding: 0.5rem 2rem;
     font-size: 0.8rem;
   }
-  #invoice-list > th {
+  table > th {
     font-size: 1rem;
   }
 
