@@ -108,9 +108,10 @@ h2 {
   transform: translate(-100%);
 }
 .dashboard--logo > img {
-  width: 6.25rem;
+  margin-top: 15px;
+  width: 8.25rem;
   margin-left: 1.25rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .d-flex img {
   width: 1rem;

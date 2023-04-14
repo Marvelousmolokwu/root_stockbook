@@ -102,11 +102,11 @@ input {
   justify-content: space-between;
 }
 
-.jc-start{
+.jc-start {
   justify-content: flex-start;
 }
 
-.ai-center{
+.ai-center {
   align-items: center;
 }
 
@@ -116,7 +116,7 @@ input {
   /* display: none; */
 }
 
-.icon-container a img{
+.icon-container a img {
   margin-inline: 0.5rem;
 }
 
@@ -143,7 +143,7 @@ input[type="checkbox"] {
   color: var(--color-cta);
 }
 
-.options p{
+.options p {
   color: black;
 }
 
@@ -243,6 +243,9 @@ button:hover,
 .logo--image {
   text-align: center;
   padding: 130px 10px 30px 10px;
+}
+.logo--image > img {
+  width: 130px;
 }
 .skip--page--button {
   padding: 4rem 6rem;
