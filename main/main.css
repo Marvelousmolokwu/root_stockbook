@@ -45,13 +45,15 @@ header {
   margin-left: auto;
 }
 .header--addstock > button,
-.Set-reminder {
+.Set-reminder,
+.invoice--generate,
+.invoice-button {
   border-radius: 5px;
   height: inherit;
   color: #fff;
   background-color: #2007b4;
   padding: 5px 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-style: "Roboto", sans-serif;
   border: none;
   margin-right: 10px;
@@ -79,6 +81,7 @@ header {
   width: 33px;
   height: 33px;
   border-radius: 50px;
+  cursor: pointer;
 }
 .header--info,
 .header--notification {
@@ -93,7 +96,10 @@ header {
 }
 .header--sreach {
   display: flex;
-  gap: 5px;
+  gap: 0px;
+}
+.header--sreach > img {
+  min-width: 40px;
 }
 .header--sreach input {
   background-color: #f2f2f2;
@@ -151,7 +157,9 @@ header {
   transform: translate(0);
   position: fixed;
 }
-.close-btn {
+.close-btn,
+.popup--close--setReminder,
+.invoice--popup--close {
   display: flex;
 
   font-size: 1rem;
@@ -165,6 +173,7 @@ header {
   display: flex;
   justify-content: flex-end;
   margin-right: 10px;
+  cursor: pointer;
 }
 .active,
 .dashBoard-items ul li:hover {
@@ -189,8 +198,11 @@ main {
   text-align: center;
 }
 /* popup */
-.popup-container {
-  padding: 15px 20px;
+.popup-container,
+.set--reminder--popup,
+.invoice--popup,
+.popup-customer--form {
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -207,11 +219,15 @@ main {
   background: #fff;
   display: none;
 }
-.popup-container h2 {
+.popup-container h2,
+.invoice--popup h2,
+.popup-customer--form h2 {
   color: black;
   margin-bottom: 10px;
 }
-.popup-container * input {
+.popup-container * input,
+.invoice--popup * input,
+.popup-customer--form * input {
   border-radius: 0.5rem;
   height: 2rem;
   margin-bottom: 1rem;
@@ -237,6 +253,43 @@ main {
   justify-content: flex-end;
 }
 .show--popup {
+  display: block;
+}
+.show--popup--invoice {
+  display: block;
+}
+.set--reminder--popup {
+  height: 200px;
+}
+.popup-customer--form {
+}
+.show--customer--form {
+  display: block;
+}
+.set--reminder--popup > button {
+  padding: 10px;
+  background-color: #0b1682;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0.6090534925460815px 6.0905351638793945px 0px #0000001a;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.set--reminder--popup h3 {
+  color: black;
+  margin: 20px 0px;
+}
+.set--reminder--popup > input {
+  width: 40px;
+  text-indent: 5px;
+  padding: 5px 0px;
+  background-color: #f2f2f2;
+  border: none;
+}
+.show--set--reminder--popup {
   display: block;
 }
 
@@ -289,6 +342,7 @@ main {
 }
 .profile--close {
   margin-left: 10px;
+  cursor: pointer;
 }
 .show--profile {
   display: block;
@@ -296,23 +350,32 @@ main {
 }
 /* table */
 table,
-th,
-td {
+table * th,
+table * td {
   padding: 0.5rem 1rem;
+
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
 }
-main.table {
+table * th {
+  font-size: 1rem;
+  padding: 1.5rem 2.8rem;
+}
+#invoice-list {
   max-height: 19rem;
   background-color: #fff;
   overflow: hidden;
-  width: 80vw;
+  width: 90vw;
 }
+
 .table--body {
   max-height: 18rem;
   background-color: #fff;
   margin: 0.8rem auto;
   border-radius: 0.6rem;
   overflow: auto;
-  width: 80%;
+  width: 90%;
   margin: 0px;
 }
 .table--body::-webkit-scrollbar {
@@ -336,6 +399,98 @@ label.validation-error {
 }
 .hide {
   display: none;
+}
+.hide--invoice {
+  display: none;
+}
+/* invoice */
+.invoice-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  color: #555;
+  position: absolute;
+  z-index: 20;
+  top: 20px;
+  right: 20px;
+  background-color: #fffcfc;
+  display: none;
+}
+.invoice-box > img {
+  right: 12px;
+  position: absolute;
+  top: 8px;
+  cursor: pointer;
+}
+
+.invoice-box table {
+  width: 100%;
+  line-height: inherit;
+  text-align: left;
+  background-color: #fff;
+  padding: 15px;
+}
+
+.invoice-box table td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+  text-align: right;
+}
+
+.invoice-box table tr.top table td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+  font-size: 25px;
+  line-height: 35px;
+  color: #333;
+}
+
+.invoice-box table tr.information table td {
+  padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+  border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+  border-top: 2px solid #eee;
+  font-weight: bold;
+}
+.invoice-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+.invoice-button {
+  padding: 5px 20px;
+}
+.show--invoice-receipt {
+  display: block;
 }
 
 /* media query */
@@ -403,11 +558,28 @@ label.validation-error {
     border-radius: 5px;
   }
   table,
-  th,
-  td {
-    padding: 0.5rem 3rem;
+  table > th,
+  table > td {
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+  }
+  table > th {
+    font-size: 1rem;
+  }
+
+  .invoice-box table tr.top table td {
+    width: 100%;
+    display: block;
+    text-align: right;
+  }
+
+  .invoice-box table tr.information table td {
+    width: 100%;
+    display: block;
+    text-align: right;
   }
 }
+
 @media screen and (min-width: 62rem) {
   .revenue {
     min-height: 200px;
