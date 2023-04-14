@@ -244,9 +244,11 @@ button:hover,
   text-align: center;
   padding: 130px 10px 30px 10px;
 }
+
 .logo--image > img {
   width: 130px;
 }
+
 .skip--page--button {
   padding: 4rem 6rem;
   background-color: #fff;

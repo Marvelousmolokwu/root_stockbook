@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,12 +11,13 @@
 
 
 
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="main.css" />
 
   <script src="app.js" defer></script>
-
+  <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -35,11 +37,11 @@
     </div>
     </div>
     <div class="header--sreach">
-      <img src="/images/ic_round-search.png" alt="sreach" />
+      <img src="/images/ic_round-search.png" alt="sreach" width="40px" />
       <input type="search" name="search" id="sreach" placeholder="sreach" />
 
       <div class="header--addstock">
-        <button class="set-reminder">Set Reminder</button>
+        <button class="Set-reminder">Set Reminder</button>
 
       </div>
     </div>
@@ -53,7 +55,7 @@
       <div class="close close-btn"><img src="/images/Close_MD.svg" alt=""></div>
 
       <div class="dashboard--logo">
-        <img src="/images/amicafulllogo.svg" alt="logo" />
+        <img src="/images/Amica-full-logo-white.svg" alt="logo" />
       </div>
       <div class="dashBoard-items">
         <ul>
@@ -71,7 +73,7 @@
           </li>
           <li class="d-flex">
             <img src="/images/Vector2.png" alt="" />
-            <a href="/main/invoice.html">Invoice</a>
+            <a>Invoice</a>
           </li>
           <li class="d-flex">
             <img src="/images/icon-park-outline_expenses-one.png" alt="" />
@@ -88,106 +90,152 @@
         </ul>
       </div>
     </div>
-  </aside>
-  <main>
-    <div class="main--heading">
-      <a href="/main/item.html">Availble Stock</a>
-      <a class="main-a">Out of stock</a>
-    </div>
-    <div class="table--body">
-      <table class="list" id="item-lists">
-        <thead>
-          <tr>
-            <th>NAME</th>
-            <th>TYPE</th>
-
-            <th>PRICE</th>
-
-            <th></th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <!-- popup -->
-    <div class="set--reminder--popup">
-
-      <div class="popoup--head">
-        <img src="/images/Close_MD2.png" alt="" class="popup--close--setReminder">
-      </div>
-      <h2 id="popup-title">Set Reminder</h2>
-      <label for="set--reminder">
-        <h3>Remind me when an item is remaining:</h3>
-      </label>
-      <input type="number" id="set--reminder" name="set--reminder">
-      <button class="header--addstock set--reminder--save">save</button>
-
-
-
-
     </div>
 
 
-    <!-- table -->
 
-  </main>
-  <aside>
-    <div class="profile">
-      <div class="profile--close"><img src="/images/Close_MD2.png" alt=""></div>
-      <div class="profile--top">
-        <div class="profile--pic"></div>
-        <div>
-          <h3>Deborah Allen</h3>
-          <p>deborahallen@gmail.com</p>
+
+    </header>
+    <aside>
+      <div class="dashBoard">
+        <div class="close close-btn"><img src="/images/Close_MD.svg" alt=""></div>
+
+        <div class="dashboard--logo">
+          <img src="/images/amicafulllogo.svg" alt="logo" />
         </div>
+        <div class="dashBoard-items">
+          <ul>
+            <li class="d-flex">
+              <img src="/images/icon-park-outline_dashboard-one.png" alt="" />
+              <a href="/main/dashBoard.html">DashBoard</a>
+            </li>
+            <li class="d-flex active">
+              <img src="/images/fluent_tray-item-remove-24-regular.png" alt="" />
+              <a href="/main/item.html">Items</a>
+            </li>
+            <li class="d-flex">
+              <img src="/images/Vector.png" alt="" />
+              <a>Sales</a>
+            </li>
+            <li class="d-flex">
+              <img src="/images/Vector2.png" alt="" />
+              <a href="/main/invoice.html">Invoice</a>
+            </li>
+            <li class="d-flex">
+              <img src="/images/icon-park-outline_expenses-one.png" alt="" />
+              <a>Expenses</a>
+            </li>
+            <li class="d-flex">
+              <img src="/images/material-symbols_monitor-weight-loss-outline-sharp.png" alt="" />
+              <a>Profit and Loss</a>
+            </li>
+            <li class="d-flex">
+              <img src="/images/settings_24px.png" alt="" />
+              <a>Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <div class="main--heading">
+        <a href="/main/item.html">Availble Stock</a>
+        <a class="main-a">Out of stock</a>
+      </div>
+      <div class="table--body">
+        <table class="list" id="item-lists">
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>TYPE</th>
+
+              <th>PRICE</th>
+
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <!-- popup -->
+      <div class="set--reminder--popup">
+
+        <div class="popoup--head">
+          <img src="/images/Close_MD2.png" alt="" class="popup--close--setReminder">
+        </div>
+        <h2 id="popup-title">Set Reminder</h2>
+        <label for="set--reminder">
+          <h3>Remind me when an item is remaining:</h3>
+        </label>
+        <input type="number" id="set--reminder" name="set--reminder">
+        <button class="header--addstock set--reminder--save">save</button>
+
+
+
 
       </div>
-      <div>
-        <ul>
-          <li class="profile--item">
-            <img src="/images/ri_notification-4-line.png" alt="" />
-            <p>Manage notifications</p>
-            <span><img src="/images/icon-right.png" alt="" /></span>
-          </li>
-          <li class="profile--item">
-            <img src="/images/material-symbols_privacy-tip-outline-rounded.png" alt="" />
-            <p>Private Policy</p>
-            <span><img src="/images/icon-right.png" alt="" /></span>
-          </li class="profile--item">
 
-          <li class="profile--item">
-            <img src="/images/material-symbols_conditions.png" alt="" />
-            <p>Terms and Conditions</p>
-            <span><img src="/images/icon-right.png" alt="" /></span>
-          </li>
-          <li class="profile--item">
-            <img src="/images/material-symbols_contact-support-outline-rounded.png" alt="" />
-            <p>Support</p>
-            <span><img src="/images/icon-right.png" alt="" /></span>
-          </li>
-          <li class="profile--item">
-            <img src="/images/ic_round-logout.png" alt="" />
-            <p>Logout</p>
-          </li>
-        </ul>
+
+      <!-- table -->
+
+    </main>
+    <aside>
+      <div class="profile">
+        <div class="profile--close"><img src="/images/Close_MD2.png" alt=""></div>
+        <div class="profile--top">
+          <div class="profile--pic"></div>
+          <div>
+            <h3>Deborah Allen</h3>
+            <p>deborahallen@gmail.com</p>
+          </div>
+
+        </div>
+        <div>
+          <ul>
+            <li class="profile--item">
+              <img src="/images/ri_notification-4-line.png" alt="" />
+              <p>Manage notifications</p>
+              <span><img src="/images/icon-right.png" alt="" /></span>
+            </li>
+            <li class="profile--item">
+              <img src="/images/material-symbols_privacy-tip-outline-rounded.png" alt="" />
+              <p>Private Policy</p>
+              <span><img src="/images/icon-right.png" alt="" /></span>
+            </li class="profile--item">
+
+            <li class="profile--item">
+              <img src="/images/material-symbols_conditions.png" alt="" />
+              <p>Terms and Conditions</p>
+              <span><img src="/images/icon-right.png" alt="" /></span>
+            </li>
+            <li class="profile--item">
+              <img src="/images/material-symbols_contact-support-outline-rounded.png" alt="" />
+              <p>Support</p>
+              <span><img src="/images/icon-right.png" alt="" /></span>
+            </li>
+            <li class="profile--item">
+              <img src="/images/ic_round-logout.png" alt="" />
+              <p>Logout</p>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </aside>
-  <script>
-    const setReminder = document.querySelector(".set-reminder");
-    const setReminderPopup = document.querySelector(".set--reminder--popup");
-    const setReminderClose = document.querySelector(".popup--close--setReminder");
-    const SetreminderSave = document.querySelector(".set--reminder--save");
-    setReminder.addEventListener("click", () => {
-      setReminderPopup.classList.add("show--set--reminder--popup");
-    });
-    setReminderClose.addEventListener("click", () => {
-      setReminderPopup.classList.remove("show--set--reminder--popup");
-    });
-    SetreminderSave.addEventListener("click", () => {
-      setReminderPopup.classList.remove("show--set--reminder--popup");
-    });
-  </script>
+    </aside>
+    <script>
+      const setReminder = document.querySelector(".set-reminder");
+      const setReminderPopup = document.querySelector(".set--reminder--popup");
+      const setReminderClose = document.querySelector(".popup--close--setReminder");
+      const SetreminderSave = document.querySelector(".set--reminder--save");
+      setReminder.addEventListener("click", () => {
+        setReminderPopup.classList.add("show--set--reminder--popup");
+      });
+      setReminderClose.addEventListener("click", () => {
+        setReminderPopup.classList.remove("show--set--reminder--popup");
+      });
+      SetreminderSave.addEventListener("click", () => {
+        setReminderPopup.classList.remove("show--set--reminder--popup");
+      });
+    </script>
 </body>
 
 </html>
