@@ -493,7 +493,15 @@ label.validation-error {
 .show--invoice-receipt {
   display: block;
 }
-
+/* notifications */
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid black;
+  padding: 0.6rem;
+  margin: 0rem 2rem;
+}
 /* media query */
 @media screen and (min-width: 25rem) {
   /* .dashBoard {
