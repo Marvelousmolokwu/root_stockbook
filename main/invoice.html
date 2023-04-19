@@ -69,7 +69,7 @@
           </li>
           <li class="d-flex">
             <img src="/images/material-symbols_monitor-weight-loss-outline-sharp.png" alt="" />
-            <a>Profit and Loss</a>
+            <a href="/main/profit.html">Profit and Loss</a>
           </li>
           <li class="d-flex">
             <img src="/images/settings_24px.png" alt="" />
@@ -355,7 +355,7 @@
 
         // Remove data from localStorage
         const invoiceData = JSON.parse(localStorage.getItem("invoiceData")) || [];
-        invoiceData.splice(row.rowIndex - 1, 1);
+        invoiceData.splice(row.rowIndex - 0, 1);
         localStorage.setItem("invoiceData", JSON.stringify(invoiceData));
       }
     }

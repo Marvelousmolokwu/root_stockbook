@@ -25,7 +25,7 @@
 
 
             <div class="header--notification">
-                <img src="/images/Group 595.png" alt="" />
+                <a href="/main/notification.html"> <img src="/images/Group 595.png" alt="" /></a>
                 <div class="notification--img"></div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                     </li>
                     <li class="d-flex">
                         <img src="/images/material-symbols_monitor-weight-loss-outline-sharp.png" alt="" />
-                        <a>Profit and Loss</a>
+                        <a href="/main/profit.html">Profit and Loss</a>
                     </li>
                     <li class="d-flex">
                         <img src="/images/settings_24px.png" alt="" />
@@ -96,7 +96,7 @@
 
                         <th>PHONE</th>
                         <th>DEBT</th>
-
+                        <th>DATE</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -127,6 +127,11 @@
                     Debt
                     <input type="text" id="debt" name="debt">
                 </label>
+                <label for="date">
+                    Date
+                    <input type="date" id="date" name="date">
+                </label>
+
                 <input id="popup-btn" type="submit" value="submit" class="customer--save">
             </form>
 
@@ -226,6 +231,7 @@
             cutomerDatas["customersname"] = document.getElementById("new--customer-name").value;
             cutomerDatas["customersnumber"] = document.getElementById("customer-number").value;
             cutomerDatas["debt"] = document.getElementById("debt").value;
+            cutomerDatas["date"] = document.getElementById("date").value;
 
             return cutomerDatas;
         }
@@ -238,9 +244,10 @@
             cell3 = newRow.insertCell(2);
             cell3.innerHTML = data.debt;
 
-
             cell4 = newRow.insertCell(3);
-            cell4.innerHTML = `<img onClick="onDelete(this)" src="/images/Close_MD2.png" alt="" class="popup--close">`;
+            cell4.innerHTML = data.date;
+            cell5 = newRow.insertCell(4);
+            cell5.innerHTML = `<img onClick="onDelete(this)" src="/images/Close_MD2.png" alt="" class="popup--close">`;
 
         }
         function resetForm() {
@@ -253,11 +260,12 @@
             if (confirm("Are you sure you want to delete this record?")) {
                 row = td.parentElement.parentElement;
                 tbody.deleteRow(row.rowIndex - 1, 1);
+                console.log(row)
                 resetForm();
 
                 // Remove data from localStorage
                 const customersData = JSON.parse(localStorage.getItem("customersData")) || [];
-                customersData.splice(row.rowIndex - 1, 1);
+                customersData.splice(row.rowIndex - 0, 1);
                 localStorage.setItem("customersData", JSON.stringify(customersData));
             }
         }

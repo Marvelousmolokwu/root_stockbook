@@ -78,7 +78,7 @@ function onDelete(td) {
 
     // Remove data from localStorage
     const savedData = JSON.parse(localStorage.getItem("myData")) || [];
-    savedData.splice(row.rowIndex - 1, 1);
+    savedData.splice(row.rowIndex - 0, 1);
     localStorage.setItem("myData", JSON.stringify(savedData));
   }
 }
