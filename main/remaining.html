@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/icon type" href="/images/Amica-logo.svg" />
-    <title>Amica Items</title>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/icon type" href="/images/amicalogo.png" />
+  <title>dashBoard</title>
 
 
 
@@ -28,7 +29,7 @@
 
 
       <div class="header--notification">
-        <img src="/images/Group 595.png" alt="" />
+        <a href="/main/notification.html"> <img src="/images/Group 595.png" alt="" /></a>
         <div class="notification--img"></div>
       </div>
     </div>
@@ -51,47 +52,40 @@
     <div class="dashBoard">
       <div class="close close-btn"><img src="/images/Close_MD.svg" alt=""></div>
 
-        <div class="dashboard--logo">
-          <img src="/images/Amica-full-logo-white.svg" alt="logo" />
-        </div>
-        <div class="dashBoard-items">
-          <ul>
-            <li class="d-flex">
-              <img src="/images/icon-park-outline_dashboard-one.png" alt="" />
-              <a href="/main/dashBoard.html">DashBoard</a>
-            </li>
-            <li class="d-flex active">
-              <img
-                src="/images/fluent_tray-item-remove-24-regular.png"
-                alt=""
-              />
-              <a href="/main/item.html">Items</a>
-            </li>
-            <li class="d-flex">
-              <img src="/images/Vector.png" alt="" />
-              <a>Sales</a>
-            </li>
-            <li class="d-flex">
-              <img src="/images/Vector2.png" alt="" />
-              <a>Invoice</a>
-            </li>
-            <li class="d-flex">
-              <img src="/images/icon-park-outline_expenses-one.png" alt="" />
-              <a>Expenses</a>
-            </li>
-            <li class="d-flex">
-              <img
-                src="/images/material-symbols_monitor-weight-loss-outline-sharp.png"
-                alt=""
-              />
-              <a>Profit and Loss</a>
-            </li>
-            <li class="d-flex">
-              <img src="/images/settings_24px.png" alt="" />
-              <a>Settings</a>
-            </li>
-          </ul>
-        </div>
+      <div class="dashboard--logo">
+        <img src="/images/amicafulllogo.svg" alt="logo" />
+      </div>
+      <div class="dashBoard-items">
+        <ul>
+          <li class="d-flex">
+            <img src="/images/icon-park-outline_dashboard-one.png" alt="" />
+            <a href="/main/dashBoard.html">DashBoard</a>
+          </li>
+          <li class="d-flex active">
+            <img src="/images/fluent_tray-item-remove-24-regular.png" alt="" />
+            <a href="/main/item.html">Items</a>
+          </li>
+          <li class="d-flex">
+            <img src="/images/Vector.png" alt="" />
+            <a>Sales</a>
+          </li>
+          <li class="d-flex">
+            <img src="/images/Vector2.png" alt="" />
+            <a href="/main/invoice.html">Invoice</a>
+          </li>
+          <li class="d-flex">
+            <img src="/images/icon-park-outline_expenses-one.png" alt="" />
+            <a>Expenses</a>
+          </li>
+          <li class="d-flex">
+            <img src="/images/material-symbols_monitor-weight-loss-outline-sharp.png" alt="" />
+            <a href="/main/profit.html">Profit and Loss</a>
+          </li>
+          <li class="d-flex">
+            <img src="/images/settings_24px.png" alt="" />
+            <a>Settings</a>
+          </li>
+        </ul>
       </div>
     </aside>
     <main>
@@ -124,7 +118,7 @@
       <label for="set--reminder">
         <h3>Remind me when an item is remaining:</h3>
       </label>
-      <input type="number" id="set--reminder" name="set--reminder">
+      <input type="number" id="set--reminder" name="set--reminder" min="0">
       <button class="header--addstock set--reminder--save">save</button>
 
 

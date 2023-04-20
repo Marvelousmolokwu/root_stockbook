@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/icon type" href="/images/logo.svg" />
+  <link rel="icon" type="image/icon type" href="/images/amicalogo.png" />
   <title>dashBoard</title>
 
   <!-- Google Fonts -->
@@ -25,7 +25,7 @@
         <h3>Invoice</h3>
       </div>
       <div class="header--notification">
-        <img src="/images/Group 595.png" alt="" />
+        <a href="/main/notification.html"> <img src="/images/Group 595.png" alt="" /></a>
         <div class="notification--img"></div>
       </div>
     </div>
@@ -43,7 +43,7 @@
       <div class="close close-btn"><img src="/images/Close_MD.svg" alt=""></div>
 
       <div class="dashboard--logo">
-        <img src="/images/Group516.png" alt="logo" />
+        <img src="/images/amicafulllogo.svg" alt="logo" />
       </div>
       <div class="dashBoard-items">
         <ul>
@@ -69,7 +69,7 @@
           </li>
           <li class="d-flex">
             <img src="/images/material-symbols_monitor-weight-loss-outline-sharp.png" alt="" />
-            <a>Profit and Loss</a>
+            <a href="/main/profit.html">Profit and Loss</a>
           </li>
           <li class="d-flex">
             <img src="/images/settings_24px.png" alt="" />
@@ -355,7 +355,7 @@
 
         // Remove data from localStorage
         const invoiceData = JSON.parse(localStorage.getItem("invoiceData")) || [];
-        invoiceData.splice(row.rowIndex - 1, 1);
+        invoiceData.splice(row.rowIndex - 0, 1);
         localStorage.setItem("invoiceData", JSON.stringify(invoiceData));
       }
     }
