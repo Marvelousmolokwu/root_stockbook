@@ -11,6 +11,7 @@ close.addEventListener("click", () => {
   popup.classList.remove("show--popup");
 });
 
+// form
 form1.addEventListener("submit", (e) => {
   e.preventDefault();
 });
