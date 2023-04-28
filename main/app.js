@@ -92,4 +92,13 @@ const myChart = new Chart(document.getElementById("myChart"), config);
 
 // Instantly assign Chart.js version
 const chartVersion = document.getElementById("chartVersion");
-chartVersion.innerText = Chart.version;
+// chartVersion.innerText = Chart.version;
+
+window.onload = function () {
+  fetch("https://amica.onrender.com/users")
+    .then((res) => res.json)
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => console.log(err));
+};
