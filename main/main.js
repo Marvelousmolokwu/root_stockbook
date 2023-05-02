@@ -3,6 +3,10 @@ const addItem = document.querySelector(".add");
 const popup = document.querySelector(".popup-container");
 const close = document.querySelector(".popup--close");
 const form1 = document.querySelector(".popup");
+const message = document.querySelector(".message");
+const notific = document.querySelector(".notification");
+
+console.log(notific);
 
 addItem.addEventListener("click", () => {
   popup.classList.add("show--popup");
@@ -12,6 +16,7 @@ close.addEventListener("click", () => {
 });
 
 // form
+let selectedRow = null;
 form1.addEventListener("submit", (e) => {
   e.preventDefault();
 });
@@ -21,7 +26,7 @@ const table = document.getElementById("item-list");
 const tbody = table.getElementsByTagName("tbody")[0];
 
 // Load data from localStorage
-const savedData = JSON.parse(localStorage.getItem("myData")) || [];
+const savedData = JSON.parse(localStorage.getItem("mydata")) || [];
 savedData.forEach((data) => {
   insertFormData(data);
 });
@@ -29,14 +34,29 @@ savedData.forEach((data) => {
 function onFormSubmit() {
   if (validate()) {
     let formData = readFormData();
-    insertFormData(formData);
+    if (selectedRow === null) {
+      insertFormData(formData);
+      message.textContent = "row inserted!";
+      message.classList.add("message--display");
+
+      setInterval(() => {
+        message.classList.remove("message--display");
+      }, 600);
+    } else {
+      updaterecord();
+      Notification.requestPermission().then((prem) => {
+        if (prem === "granted") {
+          new Notification("updated");
+        }
+      });
+    }
     resetForm();
     popup.classList.remove("show--popup");
 
     // Save data to localStorage
-    const savedData = JSON.parse(localStorage.getItem("myData")) || [];
+    const savedData = JSON.parse(localStorage.getItem("mydata")) || [];
     savedData.push(formData);
-    localStorage.setItem("myData", JSON.stringify(savedData));
+    localStorage.setItem("mydata", JSON.stringify(savedData));
   }
 }
 
@@ -51,6 +71,7 @@ function readFormData() {
 
 function insertFormData(data) {
   let newRow = tbody.insertRow(tbody.length);
+
   cell1 = newRow.insertCell(0);
   cell1.innerHTML = data.stockname;
   cell2 = newRow.insertCell(1);
@@ -60,7 +81,9 @@ function insertFormData(data) {
   cell4 = newRow.insertCell(3);
   cell4.innerHTML = data.stockprice;
   cell5 = newRow.insertCell(4);
-  cell5.innerHTML = `<img onClick="onDelete(this)" src="/images/Close_MD2.png" alt="" class="popup--close">`;
+  cell5.innerHTML = `<img onClick="onEdit(this)" src="/images/icons8-edit-20.png" alt="" class="popup--edit">`;
+  cell6 = newRow.insertCell(5);
+  cell6.innerHTML = `<img onClick="onDelete(this)" src="/images/Close_MD2.png" alt="" class="popup--close">`;
 }
 
 function resetForm() {
@@ -68,6 +91,37 @@ function resetForm() {
   document.getElementById("stock-type").value = "";
   document.getElementById("stock-amount").value = "";
   document.getElementById("stock-price").value = "";
+  selectedRow = null;
+}
+function onEdit(td) {
+  popup.classList.add("show--popup");
+  selectedRow = td.parentElement.parentElement;
+  document.getElementById("stock-name").value = selectedRow.cells[0].innerHTML;
+  document.getElementById("stock-type").value = selectedRow.cells[1].innerHTML;
+  document.getElementById("stock-amount").value =
+    selectedRow.cells[2].innerHTML;
+  document.getElementById("stock-price").value = selectedRow.cells[3].innerHTML;
+
+  row = td.parentElement.parentElement;
+  tbody.deleteRow(row.rowIndex - 1, 1);
+  const savedData = JSON.parse(localStorage.getItem("mydata")) || [];
+  savedData.splice(row.rowIndex - 0, 1);
+  localStorage.setItem("mydata", JSON.stringify(savedData));
+}
+function updaterecord() {
+  selectedRow.cells[0].innerHTML = document.getElementById("stock-name").value;
+  selectedRow.cells[1].innerHTML = document.getElementById("stock-type").value;
+  selectedRow.cells[2].innerHTML =
+    document.getElementById("stock-amount").value;
+  selectedRow.cells[3].innerHTML = document.getElementById("stock-price").value;
+  let updatemessage = document.getElementById("stock-name").value;
+  message.textContent = `${updatemessage} updated!`;
+  message.classList.add("message--display");
+
+  setInterval(() => {
+    message.classList.remove("message--display");
+  }, 600);
+  // notifications
 }
 
 function onDelete(td) {
@@ -77,9 +131,15 @@ function onDelete(td) {
     resetForm();
 
     // Remove data from localStorage
-    const savedData = JSON.parse(localStorage.getItem("myData")) || [];
+    const savedData = JSON.parse(localStorage.getItem("mydata")) || [];
     savedData.splice(row.rowIndex - 0, 1);
-    localStorage.setItem("myData", JSON.stringify(savedData));
+    localStorage.setItem("mydata", JSON.stringify(savedData));
+    message.textContent = "deleted";
+    message.classList.add("message--display");
+
+    setInterval(() => {
+      message.classList.remove("message--display");
+    }, 600);
   }
 }
 
@@ -100,4 +160,4 @@ function validate() {
   return isValid;
 }
 
-// second form
+// notifications

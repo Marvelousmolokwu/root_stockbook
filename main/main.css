@@ -261,6 +261,25 @@ main {
   display: flex;
   justify-content: flex-end;
 }
+.popup--edit {
+  cursor: pointer;
+  display: flex;
+  margin-left: 40px;
+}
+.message {
+  background-color: #fff;
+  padding: 0.3rem;
+  min-width: 60px;
+  color: #000000;
+  border-radius: 5px;
+  box-shadow: 0.6090534925460815px 2.0905351638793945px 0px #0000001a;
+  position: absolute;
+  left: 50%;
+  display: none;
+}
+.message--display {
+  display: block;
+}
 .show--popup {
   display: block;
 }

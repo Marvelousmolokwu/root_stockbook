@@ -10,7 +10,11 @@
 
     <link rel="stylesheet" href="main.css" />
 
+    <script src="main.js" defer></script>
     <script src="app.js" defer></script>
+    <script src="notify.js" defer></script>
+
+
 </head>
 
 <body>
@@ -19,12 +23,14 @@
             <img src="/images/fluent_navigation-16-filled (1).png" alt="menu" class="sidebar-toggle" />
 
             <div class="header--info">
-                <h3>Notifications</h3>
+                <h3>Notifications </h3>
+                <button class="btn">click</button>
             </div>
 
             <div class="header--notification">
                 <img src="/images/ri_notification-4-line (1).png" alt="" />
                 <div class="notification--img"></div>
+
 
             </div>
         </div>
@@ -80,19 +86,20 @@
             </div>
         </div>
     </aside>
-    <main>
+
+    <main id="notifications">
 
         <div class="notification">
             <p>you are running low on garri</p>
             <img src="/images/akar-icons_circle-alert.png" alt="">
         </div>
-        <div class="notification">
-            <p>you are running low on sugar</p>
-            <img src="/images/akar-icons_circle-alert.png" alt="">
-        </div>
+
+
+
 
     </main>
     <aside>
+
         <div class="profile">
             <div class="profile--close"><img src="/images/Close_MD2.png" alt=""></div>
             <div class="profile--top">
