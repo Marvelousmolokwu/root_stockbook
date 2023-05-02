@@ -44,11 +44,6 @@ function onFormSubmit() {
       }, 600);
     } else {
       updaterecord();
-      Notification.requestPermission().then((prem) => {
-        if (prem === "granted") {
-          new Notification("updated");
-        }
-      });
     }
     resetForm();
     popup.classList.remove("show--popup");
