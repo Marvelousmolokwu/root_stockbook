@@ -419,4 +419,12 @@ main {
   .revenue {
     min-height: 200px;
   }
+  .profile-input {
+    width: 3rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 25%;
+    top: 45%;
+    cursor: pointer;
+  }
 }
