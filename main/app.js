@@ -4,6 +4,11 @@ const dashboard = document.querySelector(".dashBoard");
 const profile = document.querySelector(".notification--img");
 const profileClose = document.querySelector(".profile--close");
 const mainProfile = document.querySelector(".profile");
+const userImage = document.querySelector(".profile--pic");
+const file = document.querySelector("#file");
+const upload = document.querySelector(".profile-input");
+const toggleTImage = document.querySelector(".header--image");
+const notificationImage = document.querySelector(".notification--img");
 
 // const setReminderPopup = document.querySelector(".set--reminder--popup");
 // const setReminderClose = document.querySelector(".popup--close--setReminder");
@@ -19,6 +24,11 @@ profile.addEventListener("click", () => {
 });
 profileClose.addEventListener("click", () => {
   mainProfile.classList.remove("show--profile");
+});
+file.addEventListener("change", function () {
+  userImage.src = URL.createObjectURL(file.files[0]);
+  toggleTImage.src = URL.createObjectURL(file.files[0]);
+  notificationImage.src = URL.createObjectURL(file.files[0]);
 });
 // setReminder.addEventListener("click", () => {
 //   setReminderPopup.classList.add("show--set--reminder--popup");

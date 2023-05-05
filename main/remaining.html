@@ -30,8 +30,9 @@
 
       <div class="header--notification">
         <a href="/main/notification.html"> <img src="/images/Group 595.png" alt="" /></a>
-        <div class="notification--img"></div>
+        <img src="/images/art-hauntington-jzY0KRJopEI-unsplash.jpg" class="notification--img">
       </div>
+    </div>
     </div>
     </div>
     <div class="header--sreach">
@@ -93,6 +94,7 @@
       <a href="/main/item.html">Availble Stock</a>
       <a class="main-a">Out of stock</a>
     </div>
+    <p class="message">timer has been set</p>
     <div class="table--body">
       <table class="list" id="item-lists">
         <thead>
@@ -118,7 +120,12 @@
       <label for="set--reminder">
         <h3>Remind me when an item is remaining:</h3>
       </label>
-      <input type="number" id="set--reminder" name="set--reminder" min="0">
+      <label for="one" class="radio">0<input type="radio" name="timer" id="zero" value="0"></label>
+      <label for="one" class="radio">1<input type="radio" name="timer" id="one" value="1"></label>
+      <label for="three" class="radio">3<input type="radio" name="timer" id="three" value="3"></label>
+      <label for="five" class="radio">5<input type="radio" name="timer" id="five" value="5"></label>
+
+
       <button class="header--addstock set--reminder--save">save</button>
 
 
@@ -133,8 +140,12 @@
   <aside>
     <div class="profile">
       <div class="profile--close"><img src="/images/Close_MD2.png" alt=""></div>
-      <div class="profile--top">
-        <div class="profile--pic"></div>
+      <div class="profile-insert">
+        <input type="file" id="file" accept="image/jpeg, image/png, image/jpg">
+        <label for="file"><img src="/images/icons8-cameras-48.png" alt="" class="profile-input"></label>
+        <div class="profile--top">
+          <img src="/images/art-hauntington-jzY0KRJopEI-unsplash.jpg" class="profile--pic">
+        </div>
         <div>
           <h3>Deborah Allen</h3>
           <p>deborahallen@gmail.com</p>
@@ -177,6 +188,9 @@
     const setReminderPopup = document.querySelector(".set--reminder--popup");
     const setReminderClose = document.querySelector(".popup--close--setReminder");
     const SetreminderSave = document.querySelector(".set--reminder--save");
+    const radioButtons = document.getElementsByName("timer")
+    const message = document.querySelector(".message")
+
     setReminder.addEventListener("click", () => {
       setReminderPopup.classList.add("show--set--reminder--popup");
     });
@@ -184,7 +198,21 @@
       setReminderPopup.classList.remove("show--set--reminder--popup");
     });
     SetreminderSave.addEventListener("click", () => {
+
       setReminderPopup.classList.remove("show--set--reminder--popup");
+      radioButtons.forEach(radio => {
+        if (radio.checked) {
+          message.textContent = `timer was set for ${radio.value} items`;
+          message.classList.add("message--display");
+          setInterval(() => {
+            message.classList.remove("message--display");
+          }, 1000);
+        }
+      })
+
+
+
+
     });
   </script>
 </body>

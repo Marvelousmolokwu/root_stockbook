@@ -10,9 +10,9 @@
 
     <link rel="stylesheet" href="main.css" />
 
-    <script src="main.js" defer></script>
+
     <script src="app.js" defer></script>
-    <script src="notify.js" defer></script>
+    <script src="main.js" defer></script>
 
 
 </head>
@@ -24,15 +24,15 @@
 
             <div class="header--info">
                 <h3>Notifications </h3>
-                <button class="btn">click</button>
             </div>
 
             <div class="header--notification">
                 <img src="/images/ri_notification-4-line (1).png" alt="" />
-                <div class="notification--img"></div>
-
-
+                <img src="/images/art-hauntington-jzY0KRJopEI-unsplash.jpg" class="notification--img">
             </div>
+
+
+        </div>
         </div>
         </div>
         <div class="header--sreach">
@@ -87,10 +87,10 @@
         </div>
     </aside>
 
-    <main id="notifications">
+    <main class="notifications">
 
         <div class="notification">
-            <p>you are running low on garri</p>
+            <p id="notification--paragraph">you are running low on garri</p>
             <img src="/images/akar-icons_circle-alert.png" alt="">
         </div>
 
@@ -102,8 +102,12 @@
 
         <div class="profile">
             <div class="profile--close"><img src="/images/Close_MD2.png" alt=""></div>
-            <div class="profile--top">
-                <div class="profile--pic"></div>
+            <div class="profile-insert">
+                <input type="file" id="file" accept="image/jpeg, image/png, image/jpg">
+                <label for="file"><img src="/images/icons8-cameras-48.png" alt="" class="profile-input"></label>
+                <div class="profile--top">
+                    <img src="/images/art-hauntington-jzY0KRJopEI-unsplash.jpg" class="profile--pic">
+                </div>
                 <div>
                     <h3>Deborah Allen</h3>
                     <p>deborahallen@gmail.com</p>

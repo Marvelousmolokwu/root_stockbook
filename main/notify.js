@@ -1,8 +1,5 @@
-const btn = document.querySelector(".btn");
 const notifica = document.querySelector("#notifications");
-btn.addEventListener("click", build);
-console.log(notifica);
-function build() {
+if (selectedRow !== null) {
   const newnotification = document.createElement("div");
 
   newnotification.innerHTML = ` 
