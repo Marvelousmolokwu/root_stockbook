@@ -9,6 +9,7 @@ const file = document.querySelector("#file");
 const upload = document.querySelector(".profile-input");
 const toggleTImage = document.querySelector(".header--image");
 const notificationImage = document.querySelector(".notification--img");
+const userName = document.querySelector(".username");
 
 // const setReminderPopup = document.querySelector(".set--reminder--popup");
 // const setReminderClose = document.querySelector(".popup--close--setReminder");
@@ -30,15 +31,6 @@ file.addEventListener("change", function () {
   toggleTImage.src = URL.createObjectURL(file.files[0]);
   notificationImage.src = URL.createObjectURL(file.files[0]);
 });
-// setReminder.addEventListener("click", () => {
-//   setReminderPopup.classList.add("show--set--reminder--popup");
-// });
-// setReminderClose.addEventListener("click", () => {
-//   setReminderPopup.classList.remove("show--set--reminder--popup");
-// });
-// SetreminderSave.addEventListener("click", () => {
-//   setReminderPopup.classList.remove("show--set--reminder--popup");
-// });
 
 // charts
 // setup

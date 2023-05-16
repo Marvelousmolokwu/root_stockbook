@@ -109,6 +109,9 @@ header {
   margin-right: 10px;
   text-indent: 10px;
 }
+.search--hide {
+  display: none;
+}
 /* dashbord */
 .dashBoard {
   width: 40%;

@@ -4,8 +4,6 @@ const popup = document.querySelector(".popup-container");
 const close = document.querySelector(".popup--close");
 const form1 = document.querySelector(".popup");
 const message = document.querySelector(".message");
-const notification = document.querySelector("#notification--paragraph");
-console.log(notification);
 
 addItem.addEventListener("click", () => {
   popup.classList.add("show--popup");
@@ -156,3 +154,41 @@ function validate() {
 }
 
 // notifications
+// search
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector("#sreach");
+  const tableBody = document.querySelector("#item-list tbody");
+
+  const rows = Array.from(tableBody.getElementsByTagName("tr"));
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    const escapedQuery = RegExp.escape(query);
+
+    rows.forEach((row) => {
+      const cells = row.querySelectorAll("td");
+      let found = false;
+
+      cells.forEach((cell) => {
+        const value = cell.textContent.toLowerCase().replace(",", "");
+
+        if (value.search(new RegExp(escapedQuery)) !== -1) {
+          found = true;
+        }
+      });
+
+      if (found) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  });
+});
+
+// Polyfill for RegExp.escape() method
+if (!RegExp.escape) {
+  RegExp.escape = function (string) {
+    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+  };
+}
