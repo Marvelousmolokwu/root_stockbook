@@ -147,13 +147,13 @@
               <table>
                 <tr>
                   <td class="title">
-                    <h3>insert company logo</h3>
+                    <h3 contenteditable="true">insert company logo</h3>
                   </td>
 
 
                   <td>
-                    Invoice #: invoice-id<br />
-                    Created: date<br />
+                    Invoice #: <span class="invoice-id"></span><br />
+                    Created: date: <span class="invoice--date"></span><br />
 
                   </td>
                 </tr>
@@ -166,12 +166,14 @@
               <table>
                 <tr>
                   <td>
-                    location of store
+                    <h3>location of store </h3>
+                    <p contenteditable="true"> click to edit</p>
+
                   </td>
 
                   <td>
-                    store Email
-                  </td>
+                    <h3>phone number </h3>
+                    <p contenteditable="true"> click to edit</p>
                 </tr>
               </table>
             </td>
@@ -180,11 +182,15 @@
           <tr class="heading">
             <td>Payment Method</td>
 
-            <td>Check #</td>
+            <td>Amount</td>
           </tr>
 
           <tr class="details">
-            <td>Check</td>
+            <td><select name="Payment" id="payment">
+                <option value="check">check</option>
+                <option value="cash" selected>cash</option>
+                <option value="transfer">transfer</option>
+              </select></td>
 
             <td>1000</td>
           </tr>
@@ -285,6 +291,8 @@
     const table = document.getElementById("invoice-list");
     const invoiceReceiptClose = document.querySelector(".invoice--close")
     const invoiceReceipt = document.querySelector(".invoice-box")
+    const invoiceId = document.querySelector(".invoice-id")
+    const invoiceDate = document.querySelector(".invoice--date")
 
     const tbody = table.getElementsByTagName("tbody")[0];
     invoiceBtn.addEventListener("click", () => {
@@ -295,9 +303,7 @@
 
       InvoiceAdd.classList.remove("show--popup--invoice");
     });
-    invoiceReceiptClose.addEventListener("click", () => {
-      invoiceReceipt.remove("show--invoice")
-    })
+
 
     form.addEventListener("submit", (e) => {
       e.preventDefault()
@@ -328,6 +334,7 @@
       formData["customerprice"] = document.getElementById("customer-price").value;
       return formData;
     }
+
     function insertFormData(data) {
       let newRow = tbody.insertRow(tbody.length);
       cell1 = newRow.insertCell(0);
@@ -341,7 +348,7 @@
       cell5 = newRow.insertCell(4);
       cell5.innerHTML = `<button onClick="generate()" class="invoice--generate"> generate </button`;
       cell6 = newRow.insertCell(5);
-      cell6.innerHTML = `#${generateId()}`;
+      cell6.innerHTML = `${generateId()} `;
       cell7 = newRow.insertCell(6);
       cell7.innerHTML = `<img onClick="onDelete(this)" src="/images/Close_MD2.png" alt="" class="popup--close">`;
 
@@ -366,14 +373,30 @@
     }
     function generateId() {
       const id = Math.floor(Math.random() * 100000)
+      invoiceId.textContent = id
       return id;
+
+
+
     }
+
     function generate() {
 
       invoiceReceipt.classList.add("show--invoice-receipt")
-      console.log("me")
+
 
     }
+    invoiceReceiptClose.addEventListener("click", () => {
+      invoiceReceipt.remove("show--invoice-receipt")
+    })
+    // date
+    const mainDate = new Date()
+    const year = mainDate.toLocaleString("default", { year: "numeric" });
+    const month = mainDate.toLocaleString("default", { month: "2-digit" });
+    const day = mainDate.toLocaleString("default", { day: "2-digit" })
+    let formattedDate = year + "-" + month + "-" + day;
+    invoiceDate.textContent = formattedDate
+
     function validate() {
       isValid = true;
       if (document.getElementById("customer-name").value == "") {
@@ -394,7 +417,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       const searchInput = document.querySelector("#sreach");
       const tableBody = document.getElementById("tbody");
-      console.log(tableBody)
+
 
       const rows = Array.from(tableBody.getElementsByTagName("tr"));
 
