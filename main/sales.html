@@ -102,7 +102,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody id="tbody"></tbody>
             </table>
         </div>
         <!-- popup -->
@@ -301,6 +301,46 @@
             }
             return isValid;
         }
+        // search
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.querySelector("#sreach");
+            const tableBody = document.getElementById("tbody");
+            console.log(tableBody)
+
+            const rows = Array.from(tableBody.getElementsByTagName("tr"));
+
+            searchInput.addEventListener("input", () => {
+                const query = searchInput.value.toLowerCase();
+                const escapedQuery = RegExp.escape(query);
+
+                rows.forEach((row) => {
+                    const cells = row.querySelectorAll("td");
+                    let found = false;
+
+                    cells.forEach((cell) => {
+                        const value = cell.textContent.toLowerCase().replace(",", "");
+
+                        if (value.search(new RegExp(escapedQuery)) !== -1) {
+                            found = true;
+                        }
+                    });
+
+                    if (found) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            });
+        });
+
+        // Polyfill for RegExp.escape() method
+        if (!RegExp.escape) {
+            RegExp.escape = function (string) {
+                return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+            };
+        }
+
     </script>
 </body>
 
