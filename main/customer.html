@@ -101,7 +101,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody id="tbody"></tbody>
             </table>
         </div>
         <!-- popup -->
@@ -209,7 +209,44 @@
             customerAddForm.classList.remove("show--customer--form");
         });
 
+        // search
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.querySelector("#sreach");
+            const tablebody = document.getElementById("tbody");
 
+            const rows = Array.from(tablebody.getElementsByTagName("tr"));
+
+            searchInput.addEventListener("input", () => {
+                const query = searchInput.value.toLowerCase();
+                const escapedQuery = RegExp.escape(query);
+
+                rows.forEach((row) => {
+                    const cells = row.querySelectorAll("td");
+                    let found = false;
+
+                    cells.forEach((cell) => {
+                        const value = cell.textContent.toLowerCase().replace(",", "");
+
+                        if (value.search(new RegExp(escapedQuery)) !== -1) {
+                            found = true;
+                        }
+                    });
+
+                    if (found) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            });
+        });
+
+        // Polyfill for RegExp.escape() method
+        if (!RegExp.escape) {
+            RegExp.escape = function (string) {
+                return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+            };
+        }
         form.addEventListener("submit", (e) => {
             e.preventDefault()
         })
@@ -291,6 +328,8 @@
             }
             return isValid;
         }
+
+
     </script>
 </body>
 

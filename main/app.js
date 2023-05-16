@@ -32,7 +32,6 @@ file.addEventListener("change", function () {
   notificationImage.src = URL.createObjectURL(file.files[0]);
 });
 
-// charts
 // setup
 const data = {
   labels: [
