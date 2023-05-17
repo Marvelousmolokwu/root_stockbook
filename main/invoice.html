@@ -152,8 +152,9 @@
 
 
                   <td>
-                    Invoice #: <span class="invoice-id"></span><br />
-                    Created: date: <span class="invoice--date"></span><br />
+                    <h3>Invoice #:</h3>
+                    <span class="invoice-id"></span><br />
+                    <h3>Created: date:</h3> <span class="invoice--date"></span><br />
 
                   </td>
                 </tr>
@@ -202,27 +203,50 @@
           </tr>
 
           <tr class="item">
-            <td>Website design</td>
+            <td><input type="text" placeholder="items" class="item-input"></td>
 
-            <td>N300.00</td>
+            <td><input type="number" placeholder="price" class="item-price"></td>
+          </tr>
+          <tr class="item">
+            <td><input type="text" placeholder="items" class="item-input"></td>
+
+            <td><input type="number" placeholder="price" class="item-price"></td>
+          </tr>
+          <tr class="item">
+            <td><input type="text" placeholder="items" class="item-input"></td>
+
+            <td><input type="number" placeholder="price" class="item-price"></td>
+          </tr>
+          <tr class="item">
+            <td><input type="text" placeholder="items" class="item-input"></td>
+
+            <td><input type="number" placeholder="price" class="item-price"></td>
+          </tr>
+          <tr class="item">
+            <td><input type="text" placeholder="items" class="item-input"></td>
+
+            <td><input type="number" placeholder="price" class="item-price"></td>
           </tr>
 
           <tr class="item">
-            <td>Hosting (3 months)</td>
+            <td><input type="text" placeholder="items" class="item-input"></td>
 
-            <td>N75.00</td>
+            <td><input type="number" placeholder="price" class="item-price"></td>
           </tr>
 
           <tr class="item last">
-            <td>Domain name (1 year)</td>
+            <td><input type="text" placeholder="items" class="item-input"></td>
 
-            <td>N10.00</td>
+            <td><input type="number" placeholder="price" class="item-price"></td>
           </tr>
 
           <tr class="total">
             <td></td>
 
-            <td>Total: N385.00</td>
+            <td> <button class="total">Total:</button>
+              <p class="item-total">item-total</p>
+            </td>
+
           </tr>
           <tr>
             <td>company signature:</td>
@@ -293,6 +317,9 @@
     const invoiceReceipt = document.querySelector(".invoice-box")
     const invoiceId = document.querySelector(".invoice-id")
     const invoiceDate = document.querySelector(".invoice--date")
+    const itemPrice = document.querySelectorAll(".item-price")
+    const itemTotal = document.querySelector(".item-total")
+    const total = document.querySelector(".total")
 
     const tbody = table.getElementsByTagName("tbody")[0];
     invoiceBtn.addEventListener("click", () => {
@@ -452,7 +479,14 @@
         return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
       };
     }
-
+    // price total
+    total.addEventListener("click", () => {
+      let sum = 0
+      itemPrice.forEach((item) => {
+        sum += Number(item.value)
+        itemTotal.textContent = `N${sum}`
+      })
+    })
   </script>
 </body>
 

@@ -555,6 +555,11 @@ label.validation-error {
   border-top: 2px solid #eee;
   font-weight: bold;
 }
+.item-input,
+.item-price {
+  outline: none;
+  border: none;
+}
 .invoice-buttons {
   display: flex;
   justify-content: space-evenly;
