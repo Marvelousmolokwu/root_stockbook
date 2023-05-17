@@ -592,6 +592,11 @@ input[type="radio"] {
   transform: scale(1.5);
   margin-left: 1rem;
 }
+.signature--pic {
+  width: 10rem;
+  height: 4rem;
+  background-color: #4d57bf;
+}
 /* media query */
 @media screen and (min-width: 25rem) {
   /* .dashBoard {

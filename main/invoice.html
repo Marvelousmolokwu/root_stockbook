@@ -139,7 +139,8 @@
       <!-- invoice -->
       <div class="invoice-box">
 
-        <table cellpadding="0" cellspacing="0" class="invoice--table">
+        <table cellpadding="0" cellspacing="0" class="invoice--table" id="invoice--table"
+          style="font-family: Arial, Helvetica, sans-serif">
           <img src="/images/Close_MD2.png" alt="" class="invoice--close">
           <tr class="top">
             <td colspan="2">
@@ -193,7 +194,7 @@
                 <option value="transfer">transfer</option>
               </select></td>
 
-            <td>1000</td>
+            <td contenteditable="true">1000</td>
           </tr>
 
           <tr class="heading">
@@ -250,11 +251,21 @@
           </tr>
           <tr>
             <td>company signature:</td>
-            <td style="background-color: rgb(227, 245, 245);"></td>
+            <td>
+              <div class="profile-insert">
+                <input type="file" id="file" accept="image/jpeg, image/png, image/jpg">
+                <label for="file">
+                  <div class="signature-input">insert your signature</div>
+                </label>
+                <div class="profile--top">
+                  <img src="/images/download2.jfif" width="10rem" height="4rem" class="signature--pic profile--pic">
+                </div>
+            </td>
           </tr>
         </table>
-        <div class="invoice-buttons"><button class="invoice-button">save</button><button
-            class="invoice-button">share</button></div>
+        <div class="invoice-buttons"><button class="invoice-button invoice-button--1"
+            data-download="invoice--table">Download</button><button
+            class="invoice-button invoice-button--2">print</button></div>
       </div>
 
   </main>
@@ -320,6 +331,7 @@
     const itemPrice = document.querySelectorAll(".item-price")
     const itemTotal = document.querySelector(".item-total")
     const total = document.querySelector(".total")
+    const printbtn = document.querySelector(".invoice-button--2")
 
     const tbody = table.getElementsByTagName("tbody")[0];
     invoiceBtn.addEventListener("click", () => {
@@ -487,6 +499,38 @@
         itemTotal.textContent = `N${sum}`
       })
     })
+    // download
+    // JavaScript code
+    const downloadButton = document.querySelector(".invoice-button--1");
+    const invoiceTable = document.getElementById("invoice--table");
+
+    downloadButton.addEventListener("click", () => {
+      const tableHTML = invoiceTable.outerHTML;
+      const filename = "invoice.html";
+      const downloadLink = document.createElement("a");
+
+      downloadLink.href = "data:text/html;charset=utf-8," + encodeURIComponent(tableHTML);
+      downloadLink.download = filename;
+      downloadLink.style.display = "none";
+
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    });
+
+    //  print
+    printbtn.addEventListener("click", printInvoice)
+    function printInvoice() {
+      var invoiceBox = document.getElementById("invoice--table");
+      var printWindow = window.open('', '', 'height=500,width=800');
+      printWindow.document.write('<head><title>Print Invoice</title></head>');
+      printWindow.document.write(invoiceBox.innerHTML);
+
+      printWindow.document.close();
+      printWindow.print();
+    }
+
+
   </script>
 </body>
 
