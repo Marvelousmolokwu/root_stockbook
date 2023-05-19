@@ -31,7 +31,10 @@ file.addEventListener("change", function () {
   toggleTImage.src = URL.createObjectURL(file.files[0]);
   notificationImage.src = URL.createObjectURL(file.files[0]);
 });
-
+const preloader = document.querySelector(".preloader");
+window.addEventListener("load", function () {
+  preloader.classList.add("hide-preloader");
+});
 // setup
 const data = {
   labels: [
@@ -95,11 +98,22 @@ const myChart = new Chart(document.getElementById("myChart"), config);
 const chartVersion = document.getElementById("chartVersion");
 // chartVersion.innerText = Chart.version;
 
-window.onload = function () {
-  fetch("https://amica.onrender.com/users")
-    .then((res) => res.json)
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => console.log(err));
-};
+// Get the query parameter from the URL
+
+// Get the query parameter from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const message = urlParams.get("message");
+
+// Use the message as needed
+console.log(message); // Output: User created
+const username = message.split(":")[1].trim();
+
+// Store the username in Local Storage
+localStorage.setItem("username", username);
+
+// Retrieve the username from Local Storage
+const storedUsername = localStorage.getItem("username");
+userName.textContent = ` Hello ${storedUsername}`;
+
+// Use the stored username as needed
+console.log(storedUsername);

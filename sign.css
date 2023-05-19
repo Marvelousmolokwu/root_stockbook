@@ -54,7 +54,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 .login > label {
   display: block;
@@ -64,6 +63,7 @@ a {
   display: flex;
   gap: 0.625rem;
   justify-content: center;
+  align-items: center;
 }
 #email,
 #password,
@@ -74,6 +74,7 @@ input {
   height: 3.5rem;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
+  width: 100%;
 }
 
 #email,
@@ -107,7 +108,7 @@ input {
 }
 
 .ai-center {
-  align-items: center;
+  text-align: left;
 }
 
 .icon-container {
@@ -315,6 +316,11 @@ button:hover,
   text-align: center;
   text-decoration: none;
   margin-top: 20px;
+  border: none;
+}
+.dashBoard:hover {
+  background-color: var(--hover-color-cta);
+  cursor: pointer;
 }
 /* popup successful */
 .successful {
@@ -351,6 +357,26 @@ p {
 .show-continue {
   display: block;
 }
+/* preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: all 0.3s linear;
+}
+
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
 
 @media screen and (min-width: 25rem) {
   .login {
@@ -383,6 +409,7 @@ p {
     background: var(--bg-gradient);
 
     width: 50%;
+    height: 150%;
   }
 
   button {

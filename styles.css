@@ -39,18 +39,22 @@ a {
   display: none;
 }
 /************************** sign up ****************************/
-.dashBoard{
-
- width: 100%;
+.dashBoard {
+  width: 100%;
   background-color: var(--color-cta);
- padding: 0.68rem 0.625rem;
- font-size: 1.25rem;
-   font-weight: bold;
-     color: #fff;
-      border-radius: 0.625rem;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 20px;
+  padding: 0.68rem 0.625rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 0.625rem;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  border: none;
+}
+.dashBoard:hover {
+  background-color: var(--hover-color-cta);
+  cursor: pointer;
 }
 .login {
   overflow-x: hidden;
@@ -59,14 +63,13 @@ a {
   font-size: 0.8rem;
 }
 .login-header {
-  margin: 1.875rem 0rem;  
+  margin: 1.875rem 0rem;
 }
 .login .login--form,
 .options {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 .login > label {
   display: block;
@@ -111,11 +114,11 @@ button {
   justify-content: space-between;
 }
 
-.ai-center{
+.ai-center {
   align-items: center;
 }
 
-.options p{
+.options p {
   color: black;
 }
 
@@ -145,6 +148,7 @@ input[type="checkbox"] {
 
 .cta {
   color: var(--color-cta);
+  margin: 1rem 0;
 }
 
 button:hover {
@@ -221,6 +225,26 @@ button:hover {
   font-weight: 500;
   font-size: 1.125;
 }
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: all 0.3s linear;
+}
+
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
+
 @media screen and (min-width: 25rem) {
   .login {
     padding: 1.5rem;
