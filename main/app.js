@@ -10,6 +10,8 @@ const upload = document.querySelector(".profile-input");
 const toggleTImage = document.querySelector(".header--image");
 const notificationImage = document.querySelector(".notification--img");
 const userName = document.querySelector(".username");
+const profileName = document.querySelector(".profile--username");
+const profileEmail = document.querySelector(".profile--email");
 
 // const setReminderPopup = document.querySelector(".set--reminder--popup");
 // const setReminderClose = document.querySelector(".popup--close--setReminder");
@@ -97,7 +99,17 @@ const myChart = new Chart(document.getElementById("myChart"), config);
 // Instantly assign Chart.js version
 const chartVersion = document.getElementById("chartVersion");
 // chartVersion.innerText = Chart.version;
+// Set a cookie with an expiration date
+document.cookie =
+  "username=John Doe; expires=Fri, 31 Dec 2023 23:59:59 GMT; path=/";
 
+// Retrieve the value of the cookie
+const cookieValue = document.cookie
+  .split("; ")
+  .find((row) => row.startsWith("username="))
+  .split("=")[1];
+
+console.log(cookieValue); // Output: John Doe
 // Get the query parameter from the URL
 
 // Get the query parameter from the URL
@@ -114,6 +126,15 @@ localStorage.setItem("username", username);
 // Retrieve the username from Local Storage
 const storedUsername = localStorage.getItem("username");
 userName.textContent = ` Hello ${storedUsername}`;
+profileName.textContent = storedUsername;
+sessionStorage.setItem("username", username);
 
+// Retrieve data from session storage
+username = sessionStorage.getItem("username");
+
+console.log(username); // Output: John Doe
 // Use the stored username as needed
 console.log(storedUsername);
+const email = localStorage.getItem("email");
+console.log(email);
+profileEmail.textContent = email;

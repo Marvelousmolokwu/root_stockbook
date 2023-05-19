@@ -39,6 +39,7 @@ button.addEventListener("click", (e) => {
 
       const queryParams = new URLSearchParams({
         message: `User created: ${data.name}`,
+        email: email,
       }).toString();
       window.location.href = `/main/dashboard.html?${queryParams}`;
     })
