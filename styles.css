@@ -97,7 +97,10 @@ button {
   border: 1px solid var(--input-color);
   text-indent: 1rem;
   font-size: 1.2rem;
+}
+input:focus {
   outline: 2px solid var(--text-color);
+  border-radius: 0.5rem;
 }
 
 .options {
