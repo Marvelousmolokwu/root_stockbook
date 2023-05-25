@@ -18,14 +18,14 @@ button.addEventListener("click", (e) => {
   if (email.trim() === "") {
     // Show an error message or perform any desired action
     WarningEmail.style.display = "block";
-    WarningEmail.textContent = "please enter valid Email";
+    WarningEmail.textContent = "please enter a valid Email";
     return; // Exit the function to prevent further execution
   } else {
     WarningEmail.style.display = "none";
   }
   if (password.trim() === "") {
     WarningPassword.style.display = "block";
-    WarningPassword.textContent = "please enter valid password";
+    WarningPassword.textContent = "please enter a valid password";
     return;
   } else {
     WarningPassword.style.display = "block";

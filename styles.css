@@ -245,6 +245,16 @@ input[type="checkbox"] {
   z-index: -999;
   visibility: hidden;
 }
+/* warning */
+.warning {
+  color: rgb(196, 8, 8);
+  background-color: rgb(252, 199, 199);
+  font-size: 0.8rem;
+  margin: 1px 0;
+  padding: 0.1rem 1rem;
+  display: none;
+  border: 1px solid rgb(196, 8, 8);
+}
 
 @media screen and (min-width: 25rem) {
   .login {
