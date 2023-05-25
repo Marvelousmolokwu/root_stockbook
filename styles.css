@@ -97,6 +97,7 @@ button {
   border: 1px solid var(--input-color);
   text-indent: 1rem;
   font-size: 1.2rem;
+  outline: 2px solid var(--text-color);
 }
 
 .options {
@@ -130,14 +131,14 @@ button {
 .divider {
   display: none;
 }
-button {
+#submit {
   border-radius: 0.625rem;
   background-color: var(--color-cta);
   color: white;
   font-weight: 700;
   font-size: 1.25rem;
   border: none;
-  width: 70%;
+  outline: none;
 }
 input[type="checkbox"] {
   background-color: var(--checkbox-color);
@@ -151,7 +152,7 @@ input[type="checkbox"] {
   margin: 1rem 0;
 }
 
-button:hover {
+#submit:hover {
   background-color: var(--hover-color-cta);
 }
 /******************************* swiper *************************/

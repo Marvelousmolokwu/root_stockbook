@@ -33,62 +33,125 @@
   <div class="preloader">
     <img src="/images/load.gif" alt="preloader" class="preloader__item" />
   </div>
-  <div class="sign-up">
-    <div class="login">
-      <header class="">
-        <a href="index.html"><img src="images/amicalogo.png" class="logo" alt=""></a>
-      </header>
-      <div class="login-header">
+  <main class="container">
+    <div class="sign-up">
+      <div class="login">
+        <header class="">
+          <a href="index.html"><img src="images/amicalogo.png" class="logo" alt=""></a>
+        </header>
+        <div class="login-header">
 
-        <h1>Welcome!</h1>
-        <p id="instruction">Kindly input your details</p>
+          <h1>Welcome!</h1>
+          <p id="instruction">Kindly input your details</p>
+        </div>
+
+        <form action="/main/dashBoard.html" method="GET" class="login--form" id="login--form">
+          <label for="email">
+            Email
+
+          </label>
+          <p class="warning warining--email">kindly input correct email</p><input type="email" id="email" required
+            autofocus>
+
+
+          <label for="password">
+            Password
+
+          </label>
+          <p class="warning warning--password">kindly input correct password</p> <input type="password" id="password"
+            required>
+
+
+          <div class="d-flex jc-between ai-center">
+            <label class="d-flex ai-center" for="remember">
+              <input type="checkbox" id="remember">
+              Remember Me
+            </label>
+
+            <a href="/forgotPassword.html" class="cta fp d-flex">Forgot Password?</a>
+          </div>
+
+          <div class="d-grid pi-center ta-center options ">
+
+
+
+            <span class="cta">Don't have an account? <b><a href="signup.html">Sign up</a></b></span>
+            <!-- divider -->
+            <span class="divider"><img src="images/divider.svg" class="divider" alt="" /> OR
+              <img src="images/divider.svg" class="divider" alt="" /></span>
+
+            <p>Sign in with:</p>
+            <!--Social media icons -->
+            <div class="icon-container d-flex jc-center ai-center">
+              <a href=""><img src="images/icon-google.svg" alt=""></a>
+              <a href=""><img src="images/icon-facebook.svg" alt=""></a>
+              <a href=""><img src="images/icon-twitter.svg" alt=""></a>
+            </div>
+          </div>
+          <input type="submit" name="submit" id="submit" class="dashBoard">
+        </form>
+
+
+
       </div>
 
-      <form action="/main/dashBoard.html" method="GET" class="login--form" id="login--form">
-        <label for="email">
-          Email
-
-        </label> <input type="email" id="email" required autofocus>
-
-        <label for="password">
-          Password
-
-        </label> <input type="password" id="password" required>
-
-        <div class="d-flex jc-between ai-center">
-          <label class="d-flex ai-center" for="remember">
-            <input type="checkbox" id="remember">
-            Remember Me
-          </label>
-
-          <a href="/forgotPassword.html" class="cta fp d-flex">Forgot Password?</a>
-        </div>
-
-        <div class="d-grid pi-center ta-center options ">
-
-
-
-          <span class="cta">Don't have an account? <b><a href="signup.html">Sign up</a></b></span>
-          <!-- divider -->
-          <span class="divider"><img src="images/divider.svg" class="divider" alt="" /> OR
-            <img src="images/divider.svg" class="divider" alt="" /></span>
-
-          <p>Sign in with:</p>
-          <!--Social media icons -->
-          <div class="icon-container d-flex jc-center ai-center">
-            <a href=""><img src="images/icon-google.svg" alt=""></a>
-            <a href=""><img src="images/icon-facebook.svg" alt=""></a>
-            <a href=""><img src="images/icon-twitter.svg" alt=""></a>
+    </div>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="slider">
+            <img src="images/undraw_investment_data_re_sh9x 1 (1).png" />
+            <div class="slider--text">
+              <h3>Track Profit & Loss</h3>
+              <p>See what you have been gaining or lossing profit</p>
+            </div>
           </div>
         </div>
-        <input type="submit" name="submit" id="submit" class="dashBoard">
-      </form>
+        <div class="swiper-slide">
+          <div class="slider">
+            <img src="images/undraw_notebook_re_id0r 1.png" alt="" />
+            <div class="slider--text">
+              <h3>Bookeeping made easy</h3>
+              <p>
+                Keep records of financial affairs of your
+                business easily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider slider3">
+            <img src="images/undraw_cloud_sync_re_02p1(1) 1.png" alt="" />
+            <div class="slider--text">
+              <h3>Cloud Storage</h3>
+              <p>
+                Store and retrieve all your information
+                from the cloud
+              </p>
+              <div class="slider--sign_in">
+                <a href="signin.html" class="sign_in--link">Get Started</a>
+                <h5> <small>Already have an account? <a href="signin.html">sign in</a></h5></small>
+              </div>
+            </div>
 
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
 
-
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev">
+        <h3 class="swiper-button--btn">Skip</h3>
+      </div>
+      <div class="swiper-button-next">
+        <h3 class="swiper-button--btn">Next</h3>
+      </div>
     </div>
-
-  </div>
+  </main>
 </body>
 
 </html>

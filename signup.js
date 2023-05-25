@@ -2,6 +2,8 @@ const userName = document.getElementById("name");
 const userEmail = document.getElementById("email");
 const userPassword = document.getElementById("password");
 const userPhone = document.getElementById("phone");
+const WarningEmail = document.querySelector(".warining--email");
+const WarningPassword = document.querySelector(".warining--password");
 
 const button = document.getElementById("submit");
 const preloader = document.querySelector(".preloader");
@@ -26,7 +28,7 @@ button.addEventListener("click", (e) => {
     .then((data) => {
       console.log(data);
 
-      window.location.href = `/index.html`;
+      window.location.href = `/signin.html`;
     })
 
     .catch((err) => console.log(err));

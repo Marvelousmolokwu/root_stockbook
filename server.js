@@ -2,6 +2,8 @@ const userEmail = document.getElementById("email");
 const userPassword = document.getElementById("password");
 const button = document.getElementById("submit");
 const preloader = document.querySelector(".preloader");
+const WarningEmail = document.querySelector(".warining--email");
+const WarningPassword = document.querySelector(".warning--password");
 
 window.addEventListener("load", function () {
   preloader.classList.add("hide-preloader");
@@ -13,10 +15,20 @@ button.addEventListener("click", (e) => {
   const email = userEmail.value;
   const password = userPassword.value;
 
-  if (email.trim() === "" || password.trim() === "") {
+  if (email.trim() === "") {
     // Show an error message or perform any desired action
-    console.log("Please enter both email and password");
+    WarningEmail.style.display = "block";
+    WarningEmail.textContent = "please enter valid Email";
     return; // Exit the function to prevent further execution
+  } else {
+    WarningEmail.style.display = "none";
+  }
+  if (password.trim() === "") {
+    WarningPassword.style.display = "block";
+    WarningPassword.textContent = "please enter valid password";
+    return;
+  } else {
+    WarningPassword.style.display = "block";
   }
 
   // Store email and password in Local Storage
@@ -43,5 +55,8 @@ button.addEventListener("click", (e) => {
       }).toString();
       window.location.href = `/main/dashboard.html?${queryParams}`;
     })
-    .catch((err) => console.log(err));
+
+    .catch((err) => {
+      console.log(err);
+    });
 });

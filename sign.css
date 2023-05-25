@@ -86,6 +86,9 @@ input {
   text-indent: 1rem;
   font-size: 1.2rem;
 }
+input:focus {
+  outline: 2px solid var(--text-color);
+}
 
 .options {
   display: flex;
@@ -124,7 +127,7 @@ input {
 .divider {
   display: none;
 }
-button {
+#submit {
   border-radius: 0.625rem;
   background-color: var(--color-cta);
   color: white;
@@ -132,7 +135,8 @@ button {
   font-weight: 700;
   font-size: 1.25rem;
   border: none;
-  width: 70%;
+
+  outline: none;
 }
 input[type="checkbox"] {
   background-color: var(--checkbox-color);
@@ -140,6 +144,7 @@ input[type="checkbox"] {
   height: 1.5rem;
   border-radius: 50%;
 }
+
 .cta {
   color: var(--color-cta);
 }
@@ -161,9 +166,18 @@ input[type="checkbox"] {
   justify-content: space-between;
 }
 
-button:hover,
+#submit:hover,
 .continue:hover {
   background-color: var(--hover-color-cta);
+}
+/* warning */
+.warning {
+  color: rgb(196, 8, 8);
+  background-color: rgb(252, 199, 199);
+  font-size: 0.8rem;
+  margin: 1px 0;
+  padding: 0.1rem 1rem;
+  display: none;
 }
 
 /****************************** swiper *****************************/
@@ -409,7 +423,7 @@ p {
     background: var(--bg-gradient);
 
     width: 50%;
-    height: 150%;
+    height: 140%;
   }
 
   button {
