@@ -178,6 +178,7 @@ input[type="checkbox"] {
   margin: 1px 0;
   padding: 0.1rem 1rem;
   display: none;
+  border: 1px solid rgb(196, 8, 8);
 }
 
 /****************************** swiper *****************************/
