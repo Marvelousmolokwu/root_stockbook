@@ -28,7 +28,7 @@ button.addEventListener("click", (e) => {
     WarningPassword.textContent = "please enter a valid password";
     return;
   } else {
-    WarningPassword.style.display = "block";
+    WarningPassword.style.display = "none";
   }
 
   // Store email and password in Local Storage
@@ -55,8 +55,9 @@ button.addEventListener("click", (e) => {
       }).toString();
       window.location.href = `/main/dashboard.html?${queryParams}`;
     })
-
     .catch((err) => {
       console.log(err);
+      WarningPassword.style.display = "block";
+      WarningPassword.textContent = "Wrong password";
     });
 });

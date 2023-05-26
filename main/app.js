@@ -12,6 +12,7 @@ const notificationImage = document.querySelector(".notification--img");
 const userName = document.querySelector(".username");
 const profileName = document.querySelector(".profile--username");
 const profileEmail = document.querySelector(".profile--email");
+const logout = document.querySelector(".logout");
 
 // const setReminderPopup = document.querySelector(".set--reminder--popup");
 // const setReminderClose = document.querySelector(".popup--close--setReminder");
@@ -28,14 +29,42 @@ profile.addEventListener("click", () => {
 profileClose.addEventListener("click", () => {
   mainProfile.classList.remove("show--profile");
 });
+logout.addEventListener("click", loggingout);
 file.addEventListener("change", function () {
-  userImage.src = URL.createObjectURL(file.files[0]);
-  toggleTImage.src = URL.createObjectURL(file.files[0]);
-  notificationImage.src = URL.createObjectURL(file.files[0]);
+  const reader = new FileReader();
+
+  reader.onload = function (event) {
+    const imageDataURL = event.target.result;
+
+    // Save the image data URL to local storage
+    localStorage.setItem("profileImage", imageDataURL);
+
+    // Set the image source to display the selected image
+    userImage.src = imageDataURL;
+    toggleTImage.src = imageDataURL;
+    notificationImage.src = imageDataURL;
+  };
+
+  // Read the selected file as a data URL
+  reader.readAsDataURL(file.files[0]);
 });
+
 const preloader = document.querySelector(".preloader");
 window.addEventListener("load", function () {
   preloader.classList.add("hide-preloader");
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const email = localStorage.getItem("email");
+  console.log(email);
+  const storedUsername = localStorage.getItem("username");
+  console.log(storedUsername);
+  userName.textContent = ` Hello ${storedUsername}`;
+  profileName.textContent = storedUsername;
+  profileEmail.textContent = email;
+  const image = localStorage.getItem("profileImage");
+  userImage.src = image;
+  toggleTImage.src = image;
+  notificationImage.src = image;
 });
 // setup
 const data = {
@@ -104,22 +133,22 @@ const chartVersion = document.getElementById("chartVersion");
 
 // Get the query parameter from the URL
 const urlParams = new URLSearchParams(window.location.search);
-const message = urlParams.get("message");
+const messages = urlParams.get("message");
 
 // Use the message as needed
-console.log(message); // Output: User created
-const username = message.split(":")[1].trim();
+// Output: User created
+const username = messages.split(":")[1].trim();
 
 // Store the username in Local Storage
 localStorage.setItem("username", username);
 
 // Retrieve the username from Local Storage
 const storedUsername = localStorage.getItem("username");
-userName.textContent = ` Hello ${storedUsername}`;
-profileName.textContent = storedUsername;
 
 // Use the stored username as needed
-console.log(storedUsername);
+
 const email = localStorage.getItem("email");
-console.log(email);
-profileEmail.textContent = email;
+// logout
+function loggingout() {
+  window.location.href = "/signin.html";
+}
