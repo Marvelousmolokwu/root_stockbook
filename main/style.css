@@ -56,6 +56,7 @@ h2 {
 .header--image {
   background-color: brown;
 
+  background-image: url("/images/blank-profile-picture-973460_1280.webp");
   background-size: cover;
   background-repeat: no-repeat;
   width: 49px;
@@ -65,6 +66,7 @@ h2 {
 .notification--img {
   background-color: brown;
 
+  background-image: url("/images/blank-profile-picture-973460_1280.webp");
   background-size: cover;
   background-repeat: no-repeat;
   width: 33px;
@@ -267,6 +269,7 @@ main {
   border-radius: 100px;
   background-color: aquamarine;
 
+  background-image: url("/images/blank-profile-picture-973460_1280.webp");
   background-size: cover;
   background-repeat: no-repeat;
 }
