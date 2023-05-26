@@ -55,7 +55,7 @@ h2 {
 
 .header--image {
   background-color: brown;
-  background-image: url("/images/blank-profile-picture-973460_1280.webp");
+
   background-size: cover;
   background-repeat: no-repeat;
   width: 49px;
@@ -275,6 +275,7 @@ main {
   align-items: center;
   font-size: 12px;
   padding: 10px 10px;
+  cursor: pointer;
 }
 .profile--item > img {
   width: 18px;

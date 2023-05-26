@@ -76,7 +76,10 @@ input {
   margin-top: 1rem;
   width: 100%;
 }
-
+input:focus {
+  outline: 2px solid var(--text-color);
+  border-radius: 0.5rem;
+}
 #email,
 #name,
 #password,

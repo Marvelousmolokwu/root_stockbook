@@ -366,6 +366,7 @@ main {
   align-items: center;
   font-size: 12px;
   padding: 10px 10px;
+  cursor: pointer;
 }
 .profile--item > img {
   width: 18px;
@@ -596,6 +597,25 @@ input[type="radio"] {
   width: 10rem;
   height: 4rem;
   background-color: #4d57bf;
+}
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: all 0.3s linear;
+}
+
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
 }
 /* media query */
 @media screen and (min-width: 25rem) {
